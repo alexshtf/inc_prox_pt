@@ -15,7 +15,7 @@ class ConvexLipschitzOntoQuadratic:
         def q(s):
             mat_times_d = quad_oracles.solve_system(s, step_size, d)
             return -torch.sum(d * mat_times_d).item() / 2 \
-                   - cvx_oracles.eval_conj(s) + s * quad_oracles.scalar()
+                   - cvx_oracles.conjugate(s) + s * quad_oracles.scalar()
 
         def q_prime(s):
             mat_sq_times_d = quad_oracles.solve_system(
@@ -38,6 +38,6 @@ class ConvexLipschitzOntoQuadratic:
         s_star = min_result.x
 
         # recover the primal optimal solution
-        x.set(quad_oracles.solve_system(s_star, step_size, d))
+        x.set_(quad_oracles.solve_system(s_star, step_size, d))
 
         return loss
