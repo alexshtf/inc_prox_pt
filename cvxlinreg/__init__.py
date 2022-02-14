@@ -1,4 +1,4 @@
-from .optimizer import IncRegularizedConvexOnLinear
+from .optimizer import IncRegularizedConvexOnLinear, ProxRegularizedConvexOnLinear
 
 from .half_squared import HalfSquared
 from .hinge import Hinge

@@ -5,7 +5,7 @@ import torch
 from cvxlinreg import IncRegularizedConvexOnLinear, HalfSquared, L2Reg
 
 # generate a two-dimensional least-squares problem
-N = 1000
+N = 5000
 x_star = torch.tensor([2., -5.])  # the "true" optimal solution
 mtx = torch.rand((N, 2)) # A randomly generated data matrix
 rhs = torch.mv(mtx, x_star) + torch.distributions.Normal(0, 0.02).sample((N,)) # the RHS, contaminated by noise

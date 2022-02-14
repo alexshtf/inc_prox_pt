@@ -2,7 +2,10 @@ import math
 
 class Logistic:
     def eval(self, z):
-        return math.log1p(math.exp(z))
+        if z > 0:
+            return math.log1p(math.exp(-z)) + z
+        else:
+            return math.log1p(math.exp(z))
 
     def conjugate_has_compact_domain(self):
         return True

@@ -5,11 +5,36 @@ import torch
 class IncRegularizedConvexOnLinear:
     def __init__(self, x, h, r):
         self._x = x
-        self._h = h
-        self._r = r
+        self._prox_alg = ProxRegularizedConvexOnLinear(h, r)
 
     def step(self, eta, a, b):
         x = self._x
+        prox_alg = self._prox_alg
+
+        x_new, loss = prox_alg.prox_eval(x, eta, a, b)
+        x.set_(x_new)
+
+        return loss
+
+
+class ProxRegularizedConvexOnLinear:
+    def __init__(self, h, r):
+        self._h = h
+        self._r = r
+
+    def eval(self, x, a, b):
+        h = self._h
+        r = self._r
+
+        if torch.is_tensor(b):
+            b = b.item()
+
+        lin_coef = (torch.dot(a, x) + b).item()
+        loss = h.eval(lin_coef) + r.eval(x).item()
+
+        return loss
+
+    def prox(self, x, eta, a, b):
         h = self._h
         r = self._r
 
@@ -18,7 +43,6 @@ class IncRegularizedConvexOnLinear:
 
         lin_coef = (torch.dot(a, x) + b).item()
         quad_coef = eta * a.square().sum().item()
-        loss = h.eval(lin_coef) + r.eval(x).item()
 
         def qprime(s):
             prox = r.prox(eta, x - eta * s * a)
@@ -43,5 +67,11 @@ class IncRegularizedConvexOnLinear:
 
         min_result = minimize_scalar(lambda s: -q(s), bounds=(l, u), method='bounded')
         s_prime = min_result.x
-        x.set_(r.prox(eta, x - eta * s_prime * a))
-        return loss
+        return r.prox(eta, x - eta * s_prime * a)
+
+    def prox_eval(self, x, eta, a, b):
+        return self.prox(x, eta, a, b), self.eval(x, a, b)
+
+    def moreau_envelope(self, x, eta, a, b):
+        prox = self.prox(x, eta, a, b)
+        return self.eval(prox, a, b) + (x - prox).square().sum() / (2 * eta)
