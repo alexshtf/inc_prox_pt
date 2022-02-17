@@ -7,21 +7,37 @@ import matplotlib.pyplot as plt
 
 from cvxlinreg import ProxRegularizedConvexOnLinear, Logistic, L2Reg
 
+
+def sparse_random_sample(height, total, occupied):
+    return torch.vstack(list(map(
+        lambda tensor: tensor.index_select(1, torch.randperm(total)),
+        torch.hstack([
+            torch.randn(height, occupied),
+            torch.zeros(height, total - occupied)
+        ]).hsplit(1)
+    )))
+
+
 reg_coef = 0.01
 loss_oracle = ProxRegularizedConvexOnLinear(Logistic(), L2Reg(reg_coef))  # L2 Regulaized logistic regression
 results = []
 
 for exp in range(10):
     # generate a two-dimensional logistic regression problem
-    N = 4000
-    M = 100
-    x_star = torch.randn(M) + 0.1  # the label-generating separating hyperplane
-    features = torch.randn((N, M))  # A randomly generated data matrix
+    N = 40
+    Ms = [5, 4, 6, 8]
+    M = sum(Ms)
+    Ms_sparse = [int(0.5 * M) for M in Ms]
+
+    x_star = torch.randn(M) + 0.5  # the label-generating separating hyperplane
+    samples = [sparse_random_sample(N, M, int(0.2 * M)) for M in Ms]
+    features = torch.hstack(samples)
+    print(features.__repr__())
 
     # create binary labels in {-1, 1}
     labels = torch.mv(features, x_star) + \
              torch.distributions.Normal(0, 0.02).sample((N,))  # the labels, contaminated by noise
-    print(f'Positive rate = {labels.mean().item()}')
+    print(f'Positive rate = {torch.heaviside(labels, torch.tensor([1.])).mean().item()}')
 
     labels = 2 * torch.heaviside(labels, torch.tensor([1.])) - 1
     dataset = TensorDataset(features, labels)
