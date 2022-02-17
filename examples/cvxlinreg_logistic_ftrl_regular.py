@@ -14,16 +14,19 @@ results = []
 for exp in range(10):
     # generate a two-dimensional logistic regression problem
     N = 4000
-    x_star = torch.tensor([2., -5.])  # the label-generating separating hyperplane
-    features = torch.rand((N, 2))  # A randomly generated data matrix
+    M = 100
+    x_star = torch.randn(M) + 0.1  # the label-generating separating hyperplane
+    features = torch.randn((N, M))  # A randomly generated data matrix
 
     # create binary labels in {-1, 1}
     labels = torch.mv(features, x_star) + \
              torch.distributions.Normal(0, 0.02).sample((N,))  # the labels, contaminated by noise
+    print(f'Positive rate = {labels.mean().item()}')
+
     labels = 2 * torch.heaviside(labels, torch.tensor([1.])) - 1
     dataset = TensorDataset(features, labels)
 
-    for eta_zero in torch.logspace(-1, 2, 20):
+    for eta_zero in torch.logspace(-2, 2, 20):
         # regular FTRL
         grad_sum = torch.zeros_like(x_star)
         x = torch.zeros_like(x_star, requires_grad=True)
@@ -42,7 +45,7 @@ for exp in range(10):
                 grad_sum += x.grad
                 eta_curr = math.sqrt(t) / eta_zero
                 x.set_(-grad_sum / (eta_curr + reg_coef))
-        print(f'Linearized FTRL: eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}, model parameters = {x}')
+        print(f'Linearized FTRL: eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}')
         results.append(dict(algo='FTRL', exp=exp, eta_zero=eta_zero.item(), loss=epoch_loss / N))
 
         # run "Tight bound" FTRL
@@ -60,7 +63,7 @@ for exp in range(10):
             prox_scale = 1. / lambda_next
             x, _ = loss_oracle.prox_eval(prox_arg, prox_scale, a, b)
             theta = lambda_next * x
-        print(f'Tight bound FTRL: eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}, model parameters = {x}')
+        print(f'Tight bound FTRL: eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}')
         results.append(dict(algo='Tight prox FTRL', exp=exp, eta_zero=eta_zero.item(), loss=epoch_loss / N))
 
         # run "Regular bound" FTRL
@@ -77,7 +80,7 @@ for exp in range(10):
 
             # accumulate loss
             epoch_loss += loss_val
-        print(f'Regular bound FTRL: eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}, model parameters = {x}')
+        print(f'Regular bound FTRL: eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}')
         results.append(dict(algo='Prox FTRL', exp=exp, eta_zero=eta_zero.item(), loss=epoch_loss / N))
 
         # run "Regular bound" FTRL + AdaHedge
@@ -104,7 +107,7 @@ for exp in range(10):
 
             # accumulate loss
             epoch_loss += loss_val
-        print(f'AdaHedge FTRL : eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}, model parameters = {x}')
+        print(f'AdaHedge FTRL : eta_zero = {eta_zero}, epoch loss = {(epoch_loss / N)}')
         results.append(dict(algo='AdaHedge FTRL', exp=exp, eta_zero=eta_zero.item(), loss=epoch_loss / N))
 
         # Regular Proximal Point
@@ -117,12 +120,12 @@ for exp in range(10):
             eta_curr = eta_zero / math.sqrt(t)
             x, loss = loss_oracle.prox_eval(x, eta_curr, a, b)
             epoch_loss += loss
-        print(f'Proximal point: eta_zero = {eta_zero.item()}, epoch loss = {(epoch_loss / N)}, model parameters = {x}')
+        print(f'Proximal point: eta_zero = {eta_zero.item()}, epoch loss = {(epoch_loss / N)}')
         results.append(dict(algo='Proximal Point', exp=exp, eta_zero=eta_zero.item(), loss=epoch_loss / N))
 
 df = pd.DataFrame.from_records(results)
 df.to_csv('results.csv', index=False)
-df = pd.read_csv('results.csv', index_col=None)
+df = pd.read_csv('results_2022_02_14_dim100.csv/results.csv', index_col=None)
 df = df[df['algo'] != 'FTRL']
 
 plt.figure(figsize=(10, 6))
