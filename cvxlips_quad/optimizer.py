@@ -10,18 +10,14 @@ class ConvexLipschitzOntoQuadratic:
         x = self._x
         loss = cvx_oracles.eval(quad_oracles.eval(x))
 
-        d = quad_oracles.compute_d(x, step_size)
-
         def q(s):
-            mat_times_d = quad_oracles.solve_system(s, step_size, d)
-            return -torch.sum(d * mat_times_d).item() / 2 \
-                   - cvx_oracles.conjugate(s) + s * quad_oracles.scalar()
+            return quad_oracles.dual_eval(s, step_size, x) - cvx_oracles.eval_conj(s) + \
+                   s * quad_oracles.scalar()
 
         def q_prime(s):
-            mat_sq_times_d = quad_oracles.solve_system(
-                s, step_size, quad_oracles.solve_system(s, step_size, d))
-            return (-s * torch.sum(d * quad_oracles.mult_mat(d)) * torch.sum(d * mat_sq_times_d)
-                    + cvx_oracles.conjugate_prime(s) + quad_oracles.scalar()).item()
+            return quad_oracles.dual_deriv(s, step_size, x) + cvx_oracles.conjugate_prime(s) + \
+                   quad_oracles.scalar()
+
 
         # compute an initial maximization interval
         if cvx_oracles.conjugate_has_compact_domain():
