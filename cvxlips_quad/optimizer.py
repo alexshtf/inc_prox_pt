@@ -1,4 +1,3 @@
-import torch
 from scipy.optimize import minimize_scalar
 
 
@@ -11,12 +10,10 @@ class ConvexLipschitzOntoQuadratic:
         loss = cvx_oracles.eval(quad_oracles.eval(x))
 
         def q(s):
-            return quad_oracles.dual_eval(s, step_size, x) - cvx_oracles.eval_conj(s) + \
-                   s * quad_oracles.scalar()
+            return quad_oracles.dual_eval(s, step_size, x) - cvx_oracles.conjugate(s)
 
         def q_prime(s):
-            return quad_oracles.dual_deriv(s, step_size, x) + cvx_oracles.conjugate_prime(s) + \
-                   quad_oracles.scalar()
+            return quad_oracles.dual_deriv(s, step_size, x) - cvx_oracles.conjugate_prime(s)
 
 
         # compute an initial maximization interval
@@ -29,11 +26,14 @@ class ConvexLipschitzOntoQuadratic:
             # scan right until a negative derivative is found
             u = next(s for s in cvx_oracles.upper_bound_sequence() if q_prime(s) < 0)
 
+        # ss = [s.item() for s in torch.linspace(l, u, 1000)]
+        # qs = [q(s) for s in ss]
+
         # compute a maximizer of q
         min_result = minimize_scalar(lambda s: -q(s), bounds=(l, u), method='bounded')
         s_star = min_result.x
 
         # recover the primal optimal solution
-        x.set_(quad_oracles.solve_system(s_star, step_size, d))
+        x.set_(quad_oracles.solve_system(s_star, step_size, x))
 
         return loss
