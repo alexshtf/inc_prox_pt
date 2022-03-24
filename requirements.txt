@@ -1,3 +1,3 @@
-torch
-scipy
-cvxpy
+torch==1.11.0
+scipy==1.8.0
+cvxpy==1.2.0
