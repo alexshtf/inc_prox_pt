@@ -64,10 +64,10 @@ class FMCTR:
         self._helper = helper
 
     def eval(self, x):
-        return -self._y * self._helper.eval(x, self._a)
+        return -self._y * self._helper.eval(x, self._a)  # g is the output of the FM, multiplied by the label
 
     def scalar(self):
-        return 0.
+        return 0.  # the constant of g(x) is zero.
 
     def dual_eval(self, s, step_size, x):
         z_0, z_biases, z_vecs = self.decompose_z_masked(s, step_size, x)
@@ -115,6 +115,10 @@ class FMCTR:
         return w_star_0, w_star, vs_star
 
     def decompose_z_masked(self, s, step_size, x):
+        """
+        z_0, z_biases, and z_vecs, excluding zero features - used to make the implementation
+        fast for sparse input vectors, as discussed in the paper.
+        """
         a = self._a[self._mask]
         y = self._y
 
