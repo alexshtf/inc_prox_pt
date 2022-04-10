@@ -35,7 +35,7 @@ class FMHelper:
     def decompose(self, x):
         """
         Decomposes the parameter vector x of dimension `total_dim` into the bias w_0,
-        the linear coefficients w, and the matrix of embedding vectors as its rows.
+        the linear coefficients w, and the matrix of embedding vectors as its _columns_.
         """
         w_0, w, nu = x.split_with_sizes([1, self._num_features, self._pairwise_dim])
         vs = nu.view(self._embedding_dim, self._num_features)
@@ -60,6 +60,7 @@ class FMCTR:
     def __init__(self, a, y, helper):
         self._a = a
         self._y = y
+        self._mask = (a != 0)
         self._helper = helper
 
     def eval(self, x):
@@ -68,54 +69,60 @@ class FMCTR:
     def scalar(self):
         return 0.
 
-    def compute_d(self, x, step_size):
+    def dual_eval(self, s, step_size, x):
+        z_0, z_biases, z_vecs = self.decompose_z_masked(s, step_size, x)
+        sol_0, sol_biases, sol_vecs = self.solve_system_masked(s, step_size, x)
+
+        result = -0.5 * (
+            z_0 * sol_0 + (z_biases * sol_biases).sum() + (z_vecs * sol_vecs).sum()
+        )
+        return result.item()
+
+    def dual_deriv(self, s, step_size, x):
+        raise NotImplementedError("At this stage, we don't suppose dual derivatives. We don't need them.")
+
+    def solve_system(self, s, step_size, x):
+        mask = self._mask
+        w_0, w, vs = self._helper.decompose(x)
+        w_star_0, w_star_masked, vs_star_masked = self.solve_system_masked(s, step_size, x)
+
+        w_star = w.clone().detach()
+        vs_star = vs.clone().detach()
+
+        w_star[mask] = w_star_masked
+        vs_star[:, mask] = vs_star_masked
+
+        return torch.cat([w_star_0, w_star, vs_star.view(-1)])
+
+    def solve_system_masked(self, s, step_size, x):
+        a = self._a[self._mask]
         y = self._y
-        a = self._a
-        helper = self._helper
 
-        z = x / step_size
-        z[0] += y
-        z[1:helper.linear_dim()] += y * a
-        return z
+        z_0, z_biases, z_vecs = self.decompose_z_masked(s, step_size, x)
 
-    def mult_mat(self, p):
-        helper = self._helper
-        a = self._a
+        w_star_0 = step_size * z_0
+        w_star = step_size * z_biases
+
+        diagonal = step_size / (1 + step_size * y * s * a.square())
+        r = (diagonal * a).reshape(-1, 1)
+        gamma_sum_part = step_size * y * s * (a.square() / (1 + step_size * y * s * a.square()))
+        gamma = (y * s) / (1 - gamma_sum_part.sum())
+
+        times_diag = z_vecs * diagonal  # equivalent to torch.mm(vs, torch.diag(diagonal))
+        times_rank_one = z_vecs @ r @ r.T
+        vs_star = times_diag + gamma * times_rank_one
+
+        return w_star_0, w_star, vs_star
+
+    def decompose_z_masked(self, s, step_size, x):
+        a = self._a[self._mask]
         y = self._y
 
-        bias_part, lin_part, pairwise_part = helper.decompose(p)
-        amat_tilde = -y * a.outer(a)
-        amat_tilde.diagonal().zero_()
+        w_0, w, vs = self._helper.decompose(x)
+        w = w[self._mask]
+        z_vecs = vs[:, self._mask]
 
-        # pairwise_part has the latent vectors in its rows. we need to transpose
-        # to embed them into the columns, to conform to the vec() operator.
-        pairwise_result = torch.mm(amat_tilde, pairwise_part.t())
-        pairwise_result = pairwise_result.t().reshape(-1)  # inverse-vec() operator
+        z_0 = w_0 / step_size + s * y
+        z_biases = w / step_size + s * y * a
 
-        return torch.cat([
-            torch.zeros(helper.linear_dim()),
-            pairwise_result
-        ])
-
-    def solve_system(self, s, eta, p):
-        a = self._a
-        y = self._y
-        helper = self._helper
-
-        bias_part, lin_part, pairwise_part = helper.decompose(p)
-
-        z = eta * y * s * (a ** 2)
-        d = eta / (1 - z)
-        r = (eta * a) / (1 - z)
-        gamma = (y * s) / (1 - torch.sum(z / (1 - z)))
-
-        u = pairwise_part.t()  # vec()
-        times_d = u * d
-        times_r_rt = torch.mm(torch.mm(u, r.t()), r)
-        inverse_product = times_d + gamma * times_r_rt
-
-        return torch.cat([
-            eta * bias_part,
-            eta * lin_part,
-            inverse_product.t().reshape(-1)  # inverse-vec()
-        ])
+        return z_0, z_biases, z_vecs / step_size
