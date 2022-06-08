@@ -7,7 +7,7 @@ The project consists of several packages for implementing proximal operators for
 * `cvxlips_quad` for a composition of a convex and Lipschitz function onto a quadratic function. Useful for problems such as phase retrieval, or factorization machines for CTR prediction.
 
 
-Example - solving a phase retrieval problem using an incremental proximal point algorithm:
+Example - solving a phase retrieval problem using an incremental **proximal point algorithm**:
 ```python
 import torch
 from cvxlips_quad import ConvexLipschitzOntoQuadratic, PhaseRetrievalOracles, AbsValue
