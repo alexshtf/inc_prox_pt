@@ -9,4 +9,4 @@ class L2Reg(Regularizer):
         return x / (1 + self._mu * eta)
 
     def eval(self, x):
-        return self._mu * x.square().sum() / 2.
+        return (self._mu / 2.) * x.square().sum()

@@ -1,4 +1,4 @@
-from scipy.optimize import minimize_scalar
+from scipy.optimize import fminbound
 import torch
 
 
@@ -41,7 +41,6 @@ class IncRegularizedConvexOnLinear:
             # scan right until a negative derivative is found
             u = next(s for s in h.upper_bound_sequence() if qprime(s) < 0)
 
-        min_result = minimize_scalar(lambda s: -q(s), bounds=(l, u), method='bounded')
-        s_prime = min_result.x
+        s_prime = fminbound(lambda s: -q(s), l, u)
         x.set_(r.prox(eta, x - eta * s_prime * a))
         return loss

@@ -12,5 +12,5 @@ class Regularizer(ABC):
 
     def envelope(self, eta, x):
         prox = self.prox(eta, x)
-        result = self.eval(prox) + 0.5 * (prox - x).square().sum() / eta
+        result = self.eval(prox) + (eta / 2) * (prox - x).square().sum()
         return result.item()

@@ -1,5 +1,6 @@
 from .regularizer import Regularizer
 from torch.nn.functional import softshrink
+from torch.linalg import vector_norm
 
 
 class L1Reg(Regularizer):
@@ -10,4 +11,4 @@ class L1Reg(Regularizer):
         return softshrink(x, eta * self._mu)
 
     def eval(self, x):
-        return self._mu * x.abs().sum()
+        return self._mu * vector_norm(x, ord=1)
