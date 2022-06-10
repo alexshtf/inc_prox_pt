@@ -8,3 +8,4 @@ from .abs_value import AbsValue
 from .l1reg import L1Reg
 from .l2normreg import L2NormReg
 from .l2reg import L2Reg
+from .regularizer import Regularizer

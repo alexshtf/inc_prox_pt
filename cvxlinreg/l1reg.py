@@ -1,6 +1,7 @@
 from .regularizer import Regularizer
 from torch.nn.functional import softshrink
 
+
 class L1Reg(Regularizer):
     def __init__(self, mu):
         self._mu = mu
