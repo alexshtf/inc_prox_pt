@@ -17,7 +17,7 @@ class IncRegularizedConvexOnLinear:
             b = b.item()
 
         lin_coef = (torch.dot(a, x) + b).item()
-        quad_coef = eta * a.square().sum().item()
+        quad_coef = (eta / 2.) * a.square().sum().item()
         loss = h.eval(lin_coef) + r.eval(x).item()
 
         def qprime(s):
