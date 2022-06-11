@@ -20,17 +20,20 @@ class IncRegularizedConvexOnLinear:
         quad_coef = (eta / 2.) * a.square().sum().item()
         loss = h.eval(lin_coef) + r.eval(x).item()
 
+        def step(s):
+            return x - (eta * s) * a
+
         def qprime(s):
-            prox = r.prox(eta, x - eta * s * a)
+            prox = r.prox(eta, step(s))
             return torch.dot(a, prox).item() \
                    - h.conjugate_prime(s) \
                    + b
 
-        def q(s):
-            return r.envelope(eta, x - eta * s * a) \
-                   + lin_coef * s \
-                   - quad_coef * (s ** 2) \
-                   - h.conjugate(s)
+        def neg_q(s):
+            return -r.envelope(eta, step(s)) \
+                   - lin_coef * s \
+                   + quad_coef * (s ** 2) \
+                   + h.conjugate(s)
 
         if h.conjugate_has_compact_domain():
             l, u = h.domain()
@@ -41,6 +44,6 @@ class IncRegularizedConvexOnLinear:
             # scan right until a negative derivative is found
             u = next(s for s in h.upper_bound_sequence() if qprime(s) < 0)
 
-        s_prime = fminbound(lambda s: -q(s), l, u)
-        x.set_(r.prox(eta, x - eta * s_prime * a))
+        s_prime = fminbound(neg_q, l, u)
+        x.set_(r.prox(eta, step(s_prime)))
         return loss

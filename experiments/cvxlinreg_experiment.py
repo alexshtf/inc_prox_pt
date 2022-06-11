@@ -37,16 +37,17 @@ def run_experiment(desc: ExperimentDesc):
     dataset = TensorDataset(features, labels)
 
     # solve a problem using incremental proximal point
-    start_time = time.perf_counter()
-    x = torch.zeros_like(x_star, dtype=torch.float32)
-    opt = IncRegularizedConvexOnLinear(x, desc.outer(), desc.reg)
-    loss = 0.
-    for i, (a, y) in enumerate(dataset, start=1):
-        step_size = 1. / math.sqrt(i)
-        ta, tb = desc.linear_transform(a, y)
-        loss += opt.step(step_size, ta, tb)
-    proxpt_time = time.perf_counter() - start_time
-    proxpt_loss = loss / len(dataset)
+    with torch.inference_mode():
+        start_time = time.perf_counter()
+        x = torch.zeros_like(x_star, dtype=torch.float32)
+        opt = IncRegularizedConvexOnLinear(x, desc.outer(), desc.reg)
+        loss = 0.
+        for i, (a, y) in enumerate(dataset, start=1):
+            step_size = 1. / math.sqrt(i)
+            ta, tb = desc.linear_transform(a, y)
+            loss += opt.step(step_size, ta, tb)
+        proxpt_time = time.perf_counter() - start_time
+        proxpt_loss = loss / len(dataset)
 
     # sovle a problem using proximal-SGD
     start_time = time.perf_counter()
@@ -74,7 +75,7 @@ def run_experiment(desc: ExperimentDesc):
 
 results = []
 for experiment in tqdm(range(30), desc='Experiment'):
-    for M in tqdm([100, 200, 300, 400, 500, 600], desc='Dim', leave=False):
+    for M in tqdm([1000, 5000, 10000], desc='Dim', leave=False):
         for N in tqdm([500, 1000, 1500, 2000, 2500, 3000], desc='Sample size', leave=False):
             ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
                 M=M, N=N,
@@ -114,7 +115,7 @@ for experiment in tqdm(range(30), desc='Experiment'):
             ))
             results.append({
                 'experiment': experiment, 'dim': M, 'num_of_samples': N,
-                'type': 'L2-LogReg', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time})
+                'type': 'L1-LogReg', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time})
 
 
 df = pd.DataFrame.from_records(results)
