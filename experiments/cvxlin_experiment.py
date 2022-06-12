@@ -52,7 +52,7 @@ def run_experiment(desc: ExperimentDesc):
     x = torch.zeros_like(x_star, dtype=torch.float32, requires_grad=True)
     opt = torch.optim.SGD(params=(x,), lr=0.0001)
     loss = 0.
-    for i, (vecs, ys) in enumerate(DataLoader(dataset, batch_size=32), start=1):
+    for i, (vecs, ys) in enumerate(DataLoader(dataset, batch_size=desc.batch_size), start=1):
         opt.zero_grad()
 
         sample_loss = desc.cost(x, vecs, ys).mean()
@@ -68,33 +68,75 @@ def run_experiment(desc: ExperimentDesc):
 
 results = []
 for experiment in tqdm(range(30), desc='Experiment'):
-    for M in tqdm([1000, 2000, 3000, 4000, 5000, 6000], desc='Dim', leave=False):
+    for M in tqdm([1000, 3000, 6000], desc='Dim', leave=False):
         for N in tqdm([5000, 10000, 15000, 20000, 25000, 30000], desc='Sample size', leave=False):
-            ls_ppt_time, ls_sgd_time, _, _ = run_experiment(ExperimentDesc(
+            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
                 M=M, N=N,
                 outer=HalfSquared, linear_transform=lambda a, y: (a, -y),
-                cost=lambda x, vecs, ys: (torch.mv(vecs, x) - ys).square()
+                cost=lambda x, vecs, ys: (torch.mv(vecs, x) - ys).square(),
+                batch_size=1
             ))
             results.append({
                 'experiment': experiment, 'dim': M, 'num_of_samples': N,
-                'type': 'Least squares', 'prox_pt_time': ls_ppt_time, 'sgd_time': ls_sgd_time})
+                'type': 'Least squares', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'batch_size': 1})
 
-            ls_ppt_time, ls_sgd_time, _, _ = run_experiment(ExperimentDesc(
+            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
+                M=M, N=N,
+                outer=HalfSquared, linear_transform=lambda a, y: (a, -y),
+                cost=lambda x, vecs, ys: (torch.mv(vecs, x) - ys).square(),
+                batch_size=16
+            ))
+            results.append({
+                'experiment': experiment, 'dim': M, 'num_of_samples': N,
+                'type': 'Least squares', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'batch_size': 16})
+
+            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
+                M=M, N=N,
+                outer=HalfSquared, linear_transform=lambda a, y: (a, -y),
+                cost=lambda x, vecs, ys: (torch.mv(vecs, x) - ys).square(),
+                batch_size=32
+            ))
+            results.append({
+                'experiment': experiment, 'dim': M, 'num_of_samples': N,
+                'type': 'Least squares', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'batch_size': 32})
+
+            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
                 M=M, N=N,
                 outer=Logistic, linear_transform=lambda a, y: (-y * a, torch.zeros(1)),
-                cost=lambda x, vecs, ys: torch.binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2)
+                cost=lambda x, vecs, ys: torch.binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2),
+                batch_size=1
             ))
             results.append({
                 'experiment': experiment, 'dim': M, 'num_of_samples': N,
-                'type': 'Logistic regression', 'prox_pt_time': ls_ppt_time, 'sgd_time': ls_sgd_time})
+                'type': 'Logistic regression', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'batch_size': 1})
+
+            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
+                M=M, N=N,
+                outer=Logistic, linear_transform=lambda a, y: (-y * a, torch.zeros(1)),
+                cost=lambda x, vecs, ys: torch.binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2),
+                batch_size=16
+            ))
+            results.append({
+                'experiment': experiment, 'dim': M, 'num_of_samples': N,
+                'type': 'Logistic regression', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'batch_size': 16})
+
+            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
+                M=M, N=N,
+                outer=Logistic, linear_transform=lambda a, y: (-y * a, torch.zeros(1)),
+                cost=lambda x, vecs, ys: torch.binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2),
+                batch_size=32
+            ))
+            results.append({
+                'experiment': experiment, 'dim': M, 'num_of_samples': N,
+                'type': 'Logistic regression', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'batch_size': 32})
+
 
 df = pd.DataFrame.from_records(results)
 df.to_csv('cvxlin_experiment.csv')
 
 plt.figure(figsize=(16, 12))
 df = pd.read_csv('cvxlin_experiment.csv')
-df = df.drop(df[(df['dim'] == 300) & (df['sgd_time'] > 0.5)].index)
 sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
 sns.lmplot(data=df, x='sgd_time', y='prox_pt_time', hue='type',
-           col='dim', col_wrap=3, palette="Set1", ci=None, facet_kws=dict(sharex=False, sharey=False))
+           col='dim', row='batch_size', palette="Set1", ci=None, facet_kws=dict(sharex=False, sharey=False))
 plt.show()
