@@ -15,8 +15,9 @@ import torch.multiprocessing as mp
 
 from cvxlinreg import IncRegularizedConvexOnLinear, HalfSquared, Logistic, Regularizer, L2Reg, L1Reg
 from torch.utils.data import TensorDataset, DataLoader
-from torch.nn.functional import binary_cross_entropy_with_logits
 from tqdm.auto import tqdm
+
+from common import *
 
 
 @attr.s
@@ -78,22 +79,6 @@ def run_experiment(desc: ExperimentDesc):
     return proxpt_time, sgd_time, proxpt_loss, sgd_loss
 
 
-def ls_linear_transform(a, y):
-    return a, -y
-
-
-def ls_cost(x, vecs, ys):
-    return (torch.mv(vecs, x) - ys).square() / 2.
-
-
-def logreg_linear_transform(a, y):
-    return -y * a, 0
-
-
-def logreg_cost(x, vecs, ys):
-    return binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2, reduction='none')
-
-
 l2ls = partial(
     ExperimentDesc,
     outer=HalfSquared,
@@ -126,13 +111,13 @@ l1logreg = partial(
     cost=logreg_cost,
     type='L1-LogReg'
 )
-experiment_descs = list(itertools.chain(*[
-    [l2ls(M=M, N=N, batch_size=batch_size), l1ls(M=M, N=N, batch_size=batch_size),
-     l2logreg(M=M, N=N, batch_size=batch_size), l1logreg(M=M, N=N, batch_size=batch_size)]
+experiment_descs = [
+    prob(M=M, N=N, batch_size=batch_size)
+    for prob in [l2ls, l1ls, l2logreg, l1logreg]
     for M in [1000, 5000, 10000]
     for N in [500, 1500, 2500]
     for batch_size in [1, 16, 32]
-]))
+]
 
 
 if __name__ == '__main__':

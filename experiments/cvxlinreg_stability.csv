@@ -1,0 +1,1201 @@
+,repetition,step size,type,algorithm,loss
+0,0,0.009999999776482582,Least squares - L2Reg,proximal point,65.6459746336545
+1,0,0.009999999776482582,Least squares - L2Reg,gradient,421.9726279622205
+2,0,0.05623413249850273,Least squares - L2Reg,proximal point,23.573614279457914
+3,0,0.05623413249850273,Least squares - L2Reg,gradient,223.21341443543434
+4,0,0.3162277638912201,Least squares - L2Reg,proximal point,21.577991286629885
+5,0,0.3162277638912201,Least squares - L2Reg,gradient,33.00383732824326
+6,0,1.778279423713684,Least squares - L2Reg,proximal point,31.229600323266645
+7,0,1.778279423713684,Least squares - L2Reg,gradient,
+8,0,10.0,Least squares - L2Reg,proximal point,115.08237957319096
+9,0,10.0,Least squares - L2Reg,gradient,
+10,0,0.009999999776482582,Least squares - L1Reg,proximal point,96.99157463579719
+11,0,0.009999999776482582,Least squares - L1Reg,gradient,433.041950459128
+12,0,0.05623413249850273,Least squares - L1Reg,proximal point,56.464650707744156
+13,0,0.05623413249850273,Least squares - L1Reg,gradient,385.875120261848
+14,0,0.3162277638912201,Least squares - L1Reg,proximal point,56.0419555256604
+15,0,0.3162277638912201,Least squares - L1Reg,gradient,73.16355998153686
+16,0,1.778279423713684,Least squares - L1Reg,proximal point,87.01991711011142
+17,0,1.778279423713684,Least squares - L1Reg,gradient,
+18,0,10.0,Least squares - L1Reg,proximal point,258.51829319400315
+19,0,10.0,Least squares - L1Reg,gradient,
+20,0,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.553241575617282
+21,0,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911591615796089
+22,0,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40413157872532823
+23,0,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6435438979715109
+24,0,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3683428420344155
+25,0,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4131629666619003
+26,0,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3998819963438055
+27,0,1.778279423713684,Logistic regression - L2Reg,gradient,0.7639144416645169
+28,0,10.0,Logistic regression - L2Reg,proximal point,0.5936851159509609
+29,0,10.0,Logistic regression - L2Reg,gradient,110.79673938097953
+30,0,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952641207599047
+31,0,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+32,0,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040246559674573
+33,0,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+34,0,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388395016757203
+35,0,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954987989723682
+36,0,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8068121484736293
+37,0,1.778279423713684,Logistic regression - L1Reg,gradient,2.061893527519703
+38,0,10.0,Logistic regression - L1Reg,proximal point,0.8708420975791903
+39,0,10.0,Logistic regression - L1Reg,gradient,226.31708842520715
+40,1,0.009999999776482582,Least squares - L2Reg,proximal point,69.1142747643039
+41,1,0.009999999776482582,Least squares - L2Reg,gradient,422.17778520451674
+42,1,0.05623413249850273,Least squares - L2Reg,proximal point,23.937177881712756
+43,1,0.05623413249850273,Least squares - L2Reg,gradient,225.19092979957162
+44,1,0.3162277638912201,Least squares - L2Reg,proximal point,21.638027364662747
+45,1,0.3162277638912201,Least squares - L2Reg,gradient,69.45117937278748
+46,1,1.778279423713684,Least squares - L2Reg,proximal point,31.305363661670366
+47,1,1.778279423713684,Least squares - L2Reg,gradient,
+48,1,10.0,Least squares - L2Reg,proximal point,114.20072995653092
+49,1,10.0,Least squares - L2Reg,gradient,
+50,1,0.009999999776482582,Least squares - L1Reg,proximal point,99.76890686982945
+51,1,0.009999999776482582,Least squares - L1Reg,gradient,433.0423691413671
+52,1,0.05623413249850273,Least squares - L1Reg,proximal point,56.70351501334787
+53,1,0.05623413249850273,Least squares - L1Reg,gradient,390.2779368729591
+54,1,0.3162277638912201,Least squares - L1Reg,proximal point,56.088867049791084
+55,1,0.3162277638912201,Least squares - L1Reg,gradient,78.99925657024383
+56,1,1.778279423713684,Least squares - L1Reg,proximal point,87.57649951374928
+57,1,1.778279423713684,Least squares - L1Reg,gradient,
+58,1,10.0,Least squares - L1Reg,proximal point,263.26789151858077
+59,1,10.0,Least squares - L1Reg,gradient,
+60,1,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5525518411554681
+61,1,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911394961357117
+62,1,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4019129581052467
+63,1,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6413801584661007
+64,1,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3680437010119381
+65,1,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4096546279862523
+66,1,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39682368964778136
+67,1,1.778279423713684,Logistic regression - L2Reg,gradient,0.7924954466149211
+68,1,10.0,Logistic regression - L2Reg,proximal point,0.5978381143439143
+69,1,10.0,Logistic regression - L2Reg,gradient,113.10061665186882
+70,1,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952672414085121
+71,1,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+72,1,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040475348459404
+73,1,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+74,1,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388224227153306
+75,1,0.3162277638912201,Logistic regression - L1Reg,gradient,0.695439031457901
+76,1,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8065834598140146
+77,1,1.778279423713684,Logistic regression - L1Reg,gradient,1.9996591898620129
+78,1,10.0,Logistic regression - L1Reg,proximal point,0.8630909233004266
+79,1,10.0,Logistic regression - L1Reg,gradient,193.8386292802334
+80,2,0.009999999776482582,Least squares - L2Reg,proximal point,71.64862156870818
+81,2,0.009999999776482582,Least squares - L2Reg,gradient,422.4060002678223
+82,2,0.05623413249850273,Least squares - L2Reg,proximal point,24.163523104138182
+83,2,0.05623413249850273,Least squares - L2Reg,gradient,228.33658095609994
+84,2,0.3162277638912201,Least squares - L2Reg,proximal point,21.6518497698284
+85,2,0.3162277638912201,Least squares - L2Reg,gradient,56.74040781755448
+86,2,1.778279423713684,Least squares - L2Reg,proximal point,31.506046286185033
+87,2,1.778279423713684,Least squares - L2Reg,gradient,
+88,2,10.0,Least squares - L2Reg,proximal point,114.8189554001706
+89,2,10.0,Least squares - L2Reg,gradient,
+90,2,0.009999999776482582,Least squares - L1Reg,proximal point,102.78676122711784
+91,2,0.009999999776482582,Least squares - L1Reg,gradient,433.04211372935475
+92,2,0.05623413249850273,Least squares - L1Reg,proximal point,57.117627934148736
+93,2,0.05623413249850273,Least squares - L1Reg,gradient,386.14016468038557
+94,2,0.3162277638912201,Least squares - L1Reg,proximal point,56.251455036810526
+95,2,0.3162277638912201,Least squares - L1Reg,gradient,100.83632154655457
+96,2,1.778279423713684,Least squares - L1Reg,proximal point,87.00700907255886
+97,2,1.778279423713684,Least squares - L1Reg,gradient,
+98,2,10.0,Least squares - L1Reg,proximal point,259.6889432629466
+99,2,10.0,Least squares - L1Reg,gradient,
+100,2,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5536097192363633
+101,2,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910913026928902
+102,2,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40533896804069447
+103,2,0.05623413249850273,Logistic regression - L2Reg,gradient,0.642160086119175
+104,2,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36752967511582235
+105,2,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41289205541461704
+106,2,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39903009843537995
+107,2,1.778279423713684,Logistic regression - L2Reg,gradient,0.807378078301251
+108,2,10.0,Logistic regression - L2Reg,proximal point,0.6076829324621119
+109,2,10.0,Logistic regression - L2Reg,gradient,110.16211012606621
+110,2,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952680971820406
+111,2,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+112,2,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040130819581701
+113,2,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+114,2,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388099211074753
+115,2,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954603265523911
+116,2,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8062257674232091
+117,2,1.778279423713684,Logistic regression - L1Reg,gradient,1.947531072539091
+118,2,10.0,Logistic regression - L1Reg,proximal point,0.8590608684235785
+119,2,10.0,Logistic regression - L1Reg,gradient,195.31647280097008
+120,3,0.009999999776482582,Least squares - L2Reg,proximal point,72.42700434824921
+121,3,0.009999999776482582,Least squares - L2Reg,gradient,422.17354107096503
+122,3,0.05623413249850273,Least squares - L2Reg,proximal point,24.066524968931347
+123,3,0.05623413249850273,Least squares - L2Reg,gradient,225.49517472589986
+124,3,0.3162277638912201,Least squares - L2Reg,proximal point,21.689542889313337
+125,3,0.3162277638912201,Least squares - L2Reg,gradient,56.18583303890228
+126,3,1.778279423713684,Least squares - L2Reg,proximal point,31.244983981822863
+127,3,1.778279423713684,Least squares - L2Reg,gradient,
+128,3,10.0,Least squares - L2Reg,proximal point,114.78895344656824
+129,3,10.0,Least squares - L2Reg,gradient,
+130,3,0.009999999776482582,Least squares - L1Reg,proximal point,103.79155033957386
+131,3,0.009999999776482582,Least squares - L1Reg,gradient,433.0420847138212
+132,3,0.05623413249850273,Least squares - L1Reg,proximal point,57.03204382918926
+133,3,0.05623413249850273,Least squares - L1Reg,gradient,387.6933149554849
+134,3,0.3162277638912201,Least squares - L1Reg,proximal point,56.248461508535335
+135,3,0.3162277638912201,Least squares - L1Reg,gradient,96.23215656776428
+136,3,1.778279423713684,Least squares - L1Reg,proximal point,86.24604985689386
+137,3,1.778279423713684,Least squares - L1Reg,gradient,
+138,3,10.0,Least squares - L1Reg,proximal point,264.5273548329698
+139,3,10.0,Least squares - L1Reg,gradient,
+140,3,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5534792372636386
+141,3,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911438377261162
+142,3,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40478353906280384
+143,3,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6432639786273241
+144,3,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36800600099104064
+145,3,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41377713669985533
+146,3,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3965614020425559
+147,3,1.778279423713684,Logistic regression - L2Reg,gradient,0.7880287214338779
+148,3,10.0,Logistic regression - L2Reg,proximal point,0.6115683216815481
+149,3,10.0,Logistic regression - L2Reg,gradient,113.39685120043755
+150,3,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.695266346441435
+151,3,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+152,3,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040213217422345
+153,3,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+154,3,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387917248597079
+155,3,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954429498672485
+156,3,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8067507119409706
+157,3,1.778279423713684,Logistic regression - L1Reg,gradient,1.9982893620491027
+158,3,10.0,Logistic regression - L1Reg,proximal point,0.8463012993440058
+159,3,10.0,Logistic regression - L1Reg,gradient,203.411634476614
+160,4,0.009999999776482582,Least squares - L2Reg,proximal point,69.04354759832451
+161,4,0.009999999776482582,Least squares - L2Reg,gradient,422.2546357633498
+162,4,0.05623413249850273,Least squares - L2Reg,proximal point,23.901840719975954
+163,4,0.05623413249850273,Least squares - L2Reg,gradient,226.6180715252757
+164,4,0.3162277638912201,Least squares - L2Reg,proximal point,21.6259198446571
+165,4,0.3162277638912201,Least squares - L2Reg,gradient,52.101032881832126
+166,4,1.778279423713684,Least squares - L2Reg,proximal point,31.34665912407029
+167,4,1.778279423713684,Least squares - L2Reg,gradient,
+168,4,10.0,Least squares - L2Reg,proximal point,113.89719942500082
+169,4,10.0,Least squares - L2Reg,gradient,
+170,4,0.009999999776482582,Least squares - L1Reg,proximal point,99.37639732165555
+171,4,0.009999999776482582,Least squares - L1Reg,gradient,433.04230894198326
+172,4,0.05623413249850273,Least squares - L1Reg,proximal point,56.706509944039375
+173,4,0.05623413249850273,Least squares - L1Reg,gradient,388.26683432626726
+174,4,0.3162277638912201,Least squares - L1Reg,proximal point,56.34637459960364
+175,4,0.3162277638912201,Least squares - L1Reg,gradient,94.90657033615112
+176,4,1.778279423713684,Least squares - L1Reg,proximal point,87.41941066062238
+177,4,1.778279423713684,Least squares - L1Reg,gradient,
+178,4,10.0,Least squares - L1Reg,proximal point,263.62166692700134
+179,4,10.0,Least squares - L1Reg,gradient,
+180,4,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5525264818878758
+181,4,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911084666907787
+182,4,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4035187616356044
+183,4,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6424610735714436
+184,4,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3682773889508791
+185,4,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41170950918234883
+186,4,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39803916680981866
+187,4,1.778279423713684,Logistic regression - L2Reg,gradient,0.7868304738998413
+188,4,10.0,Logistic regression - L2Reg,proximal point,0.5912361512623664
+189,4,10.0,Logistic regression - L2Reg,gradient,110.84858661417961
+190,4,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952520477089115
+191,4,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+192,4,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040238254109783
+193,4,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+194,4,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387836332862071
+195,4,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954075272917748
+196,4,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8069077205291477
+197,4,1.778279423713684,Logistic regression - L1Reg,gradient,1.9047578410208226
+198,4,10.0,Logistic regression - L1Reg,proximal point,0.8507649373538492
+199,4,10.0,Logistic regression - L1Reg,gradient,186.28449892401696
+200,5,0.009999999776482582,Least squares - L2Reg,proximal point,67.574235660032
+201,5,0.009999999776482582,Least squares - L2Reg,gradient,421.6201730875302
+202,5,0.05623413249850273,Least squares - L2Reg,proximal point,23.75427179581842
+203,5,0.05623413249850273,Least squares - L2Reg,gradient,218.72025017524362
+204,5,0.3162277638912201,Least squares - L2Reg,proximal point,21.519224867145375
+205,5,0.3162277638912201,Least squares - L2Reg,gradient,152.39824791440964
+206,5,1.778279423713684,Least squares - L2Reg,proximal point,30.988267016564077
+207,5,1.778279423713684,Least squares - L2Reg,gradient,
+208,5,10.0,Least squares - L2Reg,proximal point,113.7073078186383
+209,5,10.0,Least squares - L2Reg,gradient,
+210,5,0.009999999776482582,Least squares - L1Reg,proximal point,104.92601841103716
+211,5,0.009999999776482582,Least squares - L1Reg,gradient,433.04214969943035
+212,5,0.05623413249850273,Least squares - L1Reg,proximal point,57.32086332707708
+213,5,0.05623413249850273,Least squares - L1Reg,gradient,388.1962259739296
+214,5,0.3162277638912201,Least squares - L1Reg,proximal point,56.07558848617614
+215,5,0.3162277638912201,Least squares - L1Reg,gradient,70.41033234062195
+216,5,1.778279423713684,Least squares - L1Reg,proximal point,87.20334034627948
+217,5,1.778279423713684,Least squares - L1Reg,gradient,
+218,5,10.0,Least squares - L1Reg,proximal point,260.9602428392834
+219,5,10.0,Least squares - L1Reg,gradient,
+220,5,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5544969233931407
+221,5,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911243754088878
+222,5,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40594160926681994
+223,5,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6430489468604327
+224,5,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36832336440726693
+225,5,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41236020366214216
+226,5,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39947237796966006
+227,5,1.778279423713684,Logistic regression - L2Reg,gradient,0.7468384119465947
+228,5,10.0,Logistic regression - L2Reg,proximal point,0.5879113327319476
+229,5,10.0,Logistic regression - L2Reg,gradient,113.0443683778286
+230,5,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952689337805924
+231,5,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+232,5,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040219323383438
+233,5,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+234,5,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387322871037639
+235,5,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954660563886166
+236,5,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8066537375999938
+237,5,1.778279423713684,Logistic regression - L1Reg,gradient,1.9525522503435613
+238,5,10.0,Logistic regression - L1Reg,proximal point,0.8717617423262176
+239,5,10.0,Logistic regression - L1Reg,gradient,210.77753804183007
+240,6,0.009999999776482582,Least squares - L2Reg,proximal point,73.51266845585391
+241,6,0.009999999776482582,Least squares - L2Reg,gradient,422.33699316786584
+242,6,0.05623413249850273,Least squares - L2Reg,proximal point,23.828781815974928
+243,6,0.05623413249850273,Least squares - L2Reg,gradient,223.10770388503371
+244,6,0.3162277638912201,Least squares - L2Reg,proximal point,21.555632163797846
+245,6,0.3162277638912201,Least squares - L2Reg,gradient,36.27692668333054
+246,6,1.778279423713684,Least squares - L2Reg,proximal point,31.099713713771454
+247,6,1.778279423713684,Least squares - L2Reg,gradient,
+248,6,10.0,Least squares - L2Reg,proximal point,114.17150840179666
+249,6,10.0,Least squares - L2Reg,gradient,
+250,6,0.009999999776482582,Least squares - L1Reg,proximal point,97.838445199927
+251,6,0.009999999776482582,Least squares - L1Reg,gradient,433.04176244156685
+252,6,0.05623413249850273,Least squares - L1Reg,proximal point,56.691293724538326
+253,6,0.05623413249850273,Least squares - L1Reg,gradient,382.11739188601973
+254,6,0.3162277638912201,Least squares - L1Reg,proximal point,55.96081704940099
+255,6,0.3162277638912201,Least squares - L1Reg,gradient,117.37637410087585
+256,6,1.778279423713684,Least squares - L1Reg,proximal point,86.77618810780562
+257,6,1.778279423713684,Least squares - L1Reg,gradient,
+258,6,10.0,Least squares - L1Reg,proximal point,261.4534857101036
+259,6,10.0,Least squares - L1Reg,gradient,
+260,6,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5512130627085883
+261,6,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910549921154976
+262,6,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.402141934194102
+263,6,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6423273098140955
+264,6,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3680402909602699
+265,6,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4124388579890132
+266,6,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39966628293888495
+267,6,1.778279423713684,Logistic regression - L2Reg,gradient,0.7289750783458352
+268,6,10.0,Logistic regression - L2Reg,proximal point,0.5936880661920335
+269,6,10.0,Logistic regression - L2Reg,gradient,108.63919903025626
+270,6,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952686032615706
+271,6,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+272,6,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.704034466348712
+273,6,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+274,6,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7389886756479584
+275,6,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954406540870667
+276,6,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8065801580379529
+277,6,1.778279423713684,Logistic regression - L1Reg,gradient,1.957007465237379
+278,6,10.0,Logistic regression - L1Reg,proximal point,0.8751965539011751
+279,6,10.0,Logistic regression - L1Reg,gradient,208.6296685781002
+280,7,0.009999999776482582,Least squares - L2Reg,proximal point,68.69364800139479
+281,7,0.009999999776482582,Least squares - L2Reg,gradient,422.0785108376922
+282,7,0.05623413249850273,Least squares - L2Reg,proximal point,23.87522868632634
+283,7,0.05623413249850273,Least squares - L2Reg,gradient,224.57713294046334
+284,7,0.3162277638912201,Least squares - L2Reg,proximal point,21.687481337651626
+285,7,0.3162277638912201,Least squares - L2Reg,gradient,29.21390934523505
+286,7,1.778279423713684,Least squares - L2Reg,proximal point,31.49977876664986
+287,7,1.778279423713684,Least squares - L2Reg,gradient,
+288,7,10.0,Least squares - L2Reg,proximal point,112.99081393542656
+289,7,10.0,Least squares - L2Reg,gradient,
+290,7,0.009999999776482582,Least squares - L1Reg,proximal point,100.1374902332288
+291,7,0.009999999776482582,Least squares - L1Reg,gradient,433.0412628230244
+292,7,0.05623413249850273,Least squares - L1Reg,proximal point,56.84912051039515
+293,7,0.05623413249850273,Least squares - L1Reg,gradient,391.43948075015544
+294,7,0.3162277638912201,Least squares - L1Reg,proximal point,56.03035258491719
+295,7,0.3162277638912201,Least squares - L1Reg,gradient,65.54949775924683
+296,7,1.778279423713684,Least squares - L1Reg,proximal point,87.32111561910465
+297,7,1.778279423713684,Least squares - L1Reg,gradient,
+298,7,10.0,Least squares - L1Reg,proximal point,260.77562518567873
+299,7,10.0,Least squares - L1Reg,gradient,
+300,7,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5514349844586525
+301,7,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910890715897083
+302,7,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40446593494847893
+303,7,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6415992438226938
+304,7,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.368989938466735
+305,7,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4119723657630384
+306,7,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39741074131368626
+307,7,1.778279423713684,Logistic regression - L2Reg,gradient,0.7982027172833681
+308,7,10.0,Logistic regression - L2Reg,proximal point,0.575539447776419
+309,7,10.0,Logistic regression - L2Reg,gradient,113.2033723142147
+310,7,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952707995368224
+311,7,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+312,7,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040164702739568
+313,7,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+314,7,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7389050619086234
+315,7,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954181758880615
+316,7,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8073494973068951
+317,7,1.778279423713684,Logistic regression - L1Reg,gradient,1.984874165481329
+318,7,10.0,Logistic regression - L1Reg,proximal point,0.8572512072465491
+319,7,10.0,Logistic regression - L1Reg,gradient,221.59098992972375
+320,8,0.009999999776482582,Least squares - L2Reg,proximal point,69.13931962950195
+321,8,0.009999999776482582,Least squares - L2Reg,gradient,421.7641715078634
+322,8,0.05623413249850273,Least squares - L2Reg,proximal point,23.916197690378024
+323,8,0.05623413249850273,Least squares - L2Reg,gradient,225.14758392525465
+324,8,0.3162277638912201,Least squares - L2Reg,proximal point,21.52313105194502
+325,8,0.3162277638912201,Least squares - L2Reg,gradient,68.197703662014
+326,8,1.778279423713684,Least squares - L2Reg,proximal point,31.382434234701975
+327,8,1.778279423713684,Least squares - L2Reg,gradient,
+328,8,10.0,Least squares - L2Reg,proximal point,114.26377009514626
+329,8,10.0,Least squares - L2Reg,gradient,
+330,8,0.009999999776482582,Least squares - L1Reg,proximal point,100.2710819048101
+331,8,0.009999999776482582,Least squares - L1Reg,gradient,433.0425745645174
+332,8,0.05623413249850273,Least squares - L1Reg,proximal point,56.65676465786016
+333,8,0.05623413249850273,Least squares - L1Reg,gradient,385.10600666362046
+334,8,0.3162277638912201,Least squares - L1Reg,proximal point,56.12792316987094
+335,8,0.3162277638912201,Least squares - L1Reg,gradient,69.0037236858964
+336,8,1.778279423713684,Least squares - L1Reg,proximal point,86.874668397223
+337,8,1.778279423713684,Least squares - L1Reg,gradient,
+338,8,10.0,Least squares - L1Reg,proximal point,264.89145099422467
+339,8,10.0,Least squares - L1Reg,gradient,
+340,8,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5508032980429336
+341,8,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911214382708073
+342,8,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40300854995969587
+343,8,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6431842954576016
+344,8,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3676969750601387
+345,8,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41202838432118294
+346,8,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39886084059671334
+347,8,1.778279423713684,Logistic regression - L2Reg,gradient,0.8031746635183692
+348,8,10.0,Logistic regression - L2Reg,proximal point,0.6179513013594674
+349,8,10.0,Logistic regression - L2Reg,gradient,116.79930150847434
+350,8,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952640816033572
+351,8,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+352,8,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040244784839832
+353,8,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+354,8,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388767773970463
+355,8,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954318360328674
+356,8,1.778279423713684,Logistic regression - L1Reg,proximal point,0.806683355632565
+357,8,1.778279423713684,Logistic regression - L1Reg,gradient,1.983373654937744
+358,8,10.0,Logistic regression - L1Reg,proximal point,0.8530689063638258
+359,8,10.0,Logistic regression - L1Reg,gradient,216.0843335690975
+360,9,0.009999999776482582,Least squares - L2Reg,proximal point,68.8977155852577
+361,9,0.009999999776482582,Least squares - L2Reg,gradient,422.33796382053794
+362,9,0.05623413249850273,Least squares - L2Reg,proximal point,24.11592110277881
+363,9,0.05623413249850273,Least squares - L2Reg,gradient,220.76876933183743
+364,9,0.3162277638912201,Least squares - L2Reg,proximal point,21.475043345706197
+365,9,0.3162277638912201,Least squares - L2Reg,gradient,26.2780706366539
+366,9,1.778279423713684,Least squares - L2Reg,proximal point,31.185104089809652
+367,9,1.778279423713684,Least squares - L2Reg,gradient,
+368,9,10.0,Least squares - L2Reg,proximal point,113.43557557867044
+369,9,10.0,Least squares - L2Reg,gradient,
+370,9,0.009999999776482582,Least squares - L1Reg,proximal point,102.52705151297205
+371,9,0.009999999776482582,Least squares - L1Reg,gradient,433.0422620970739
+372,9,0.05623413249850273,Least squares - L1Reg,proximal point,56.478669190644936
+373,9,0.05623413249850273,Least squares - L1Reg,gradient,380.5090894026518
+374,9,0.3162277638912201,Least squares - L1Reg,proximal point,56.09969889106936
+375,9,0.3162277638912201,Least squares - L1Reg,gradient,69.62554532661439
+376,9,1.778279423713684,Least squares - L1Reg,proximal point,86.83781423729235
+377,9,1.778279423713684,Least squares - L1Reg,gradient,
+378,9,10.0,Least squares - L1Reg,proximal point,264.89145099422467
+379,9,10.0,Least squares - L1Reg,gradient,
+380,9,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5535452101315308
+381,9,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911459051966667
+382,9,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40334167772109647
+383,9,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6417986740618944
+384,9,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3688044277670882
+385,9,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4123557510241866
+386,9,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3969738425783947
+387,9,1.778279423713684,Logistic regression - L2Reg,gradient,0.8280211189985275
+388,9,10.0,Logistic regression - L2Reg,proximal point,0.5770683393568314
+389,9,10.0,Logistic regression - L2Reg,gradient,112.1505782145977
+390,9,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952600714843296
+391,9,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+392,9,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040445257930155
+393,9,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+394,9,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388767773970463
+395,9,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954318360328674
+396,9,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8071877602445585
+397,9,1.778279423713684,Logistic regression - L1Reg,gradient,1.9909780709326268
+398,9,10.0,Logistic regression - L1Reg,proximal point,0.8727113697130234
+399,9,10.0,Logistic regression - L1Reg,gradient,182.28541427588462
+400,10,0.009999999776482582,Least squares - L2Reg,proximal point,75.74603282435642
+401,10,0.009999999776482582,Least squares - L2Reg,gradient,421.76959857780804
+402,10,0.05623413249850273,Least squares - L2Reg,proximal point,23.985256452256575
+403,10,0.05623413249850273,Least squares - L2Reg,gradient,225.91614019748272
+404,10,0.3162277638912201,Least squares - L2Reg,proximal point,21.83636147407001
+405,10,0.3162277638912201,Least squares - L2Reg,gradient,36.52283578205109
+406,10,1.778279423713684,Least squares - L2Reg,proximal point,31.282888056904632
+407,10,1.778279423713684,Least squares - L2Reg,gradient,
+408,10,10.0,Least squares - L2Reg,proximal point,115.81265489629679
+409,10,10.0,Least squares - L2Reg,gradient,
+410,10,0.009999999776482582,Least squares - L1Reg,proximal point,102.52705151297205
+411,10,0.009999999776482582,Least squares - L1Reg,gradient,433.0422620970739
+412,10,0.05623413249850273,Least squares - L1Reg,proximal point,56.933200071967114
+413,10,0.05623413249850273,Least squares - L1Reg,gradient,391.667422083652
+414,10,0.3162277638912201,Least squares - L1Reg,proximal point,55.94347085310931
+415,10,0.3162277638912201,Least squares - L1Reg,gradient,69.655938656044
+416,10,1.778279423713684,Least squares - L1Reg,proximal point,86.83781423729235
+417,10,1.778279423713684,Least squares - L1Reg,gradient,
+418,10,10.0,Least squares - L1Reg,proximal point,259.03902690199067
+419,10,10.0,Least squares - L1Reg,gradient,
+420,10,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5562271349650499
+421,10,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910808983147144
+422,10,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4038594434471296
+423,10,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6428020776718855
+424,10,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3690306599808418
+425,10,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41197326681464913
+426,10,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3996729869068824
+427,10,1.778279423713684,Logistic regression - L2Reg,gradient,0.7667794894516468
+428,10,10.0,Logistic regression - L2Reg,proximal point,0.615278373680195
+429,10,10.0,Logistic regression - L2Reg,gradient,109.30805247569084
+430,10,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952603135194318
+431,10,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+432,10,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040106584714176
+433,10,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+434,10,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388116436058402
+435,10,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954244455039501
+436,10,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8073322133678242
+437,10,1.778279423713684,Logistic regression - L1Reg,gradient,1.8893639841496945
+438,10,10.0,Logistic regression - L1Reg,proximal point,0.8679335050909356
+439,10,10.0,Logistic regression - L1Reg,gradient,183.39633693404198
+440,11,0.009999999776482582,Least squares - L2Reg,proximal point,75.74603282435642
+441,11,0.009999999776482582,Least squares - L2Reg,gradient,421.76959857780804
+442,11,0.05623413249850273,Least squares - L2Reg,proximal point,24.347000190907323
+443,11,0.05623413249850273,Least squares - L2Reg,gradient,222.51333557033837
+444,11,0.3162277638912201,Least squares - L2Reg,proximal point,21.610550302057508
+445,11,0.3162277638912201,Least squares - L2Reg,gradient,40.56974682912826
+446,11,1.778279423713684,Least squares - L2Reg,proximal point,31.474343389560918
+447,11,1.778279423713684,Least squares - L2Reg,gradient,
+448,11,10.0,Least squares - L2Reg,proximal point,112.72007203436294
+449,11,10.0,Least squares - L2Reg,gradient,
+450,11,0.009999999776482582,Least squares - L1Reg,proximal point,101.81548687336345
+451,11,0.009999999776482582,Least squares - L1Reg,gradient,433.0423022632369
+452,11,0.05623413249850273,Least squares - L1Reg,proximal point,56.8600432128251
+453,11,0.05623413249850273,Least squares - L1Reg,gradient,392.20695436321495
+454,11,0.3162277638912201,Least squares - L1Reg,proximal point,56.08122312867242
+455,11,0.3162277638912201,Least squares - L1Reg,gradient,83.27910058059692
+456,11,1.778279423713684,Least squares - L1Reg,proximal point,86.30454733530553
+457,11,1.778279423713684,Least squares - L1Reg,gradient,
+458,11,10.0,Least squares - L1Reg,proximal point,260.5680079487848
+459,11,10.0,Least squares - L1Reg,gradient,
+460,11,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5537334511268031
+461,11,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911367896437645
+462,11,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40398020772139726
+463,11,0.05623413249850273,Logistic regression - L2Reg,gradient,0.643296168655157
+464,11,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3680949190416937
+465,11,0.3162277638912201,Logistic regression - L2Reg,gradient,0.412001153736189
+466,11,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3986368570773947
+467,11,1.778279423713684,Logistic regression - L2Reg,gradient,0.7681398946434259
+468,11,10.0,Logistic regression - L2Reg,proximal point,0.6149864376700043
+469,11,10.0,Logistic regression - L2Reg,gradient,116.07459714865685
+470,11,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952641393163042
+471,11,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+472,11,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.704031518332696
+473,11,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+474,11,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387797611031063
+475,11,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954685199916363
+476,11,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8064768882362062
+477,11,1.778279423713684,Logistic regression - L1Reg,gradient,1.9703588454127312
+478,11,10.0,Logistic regression - L1Reg,proximal point,0.8618272983172789
+479,11,10.0,Logistic regression - L1Reg,gradient,198.63422738928796
+480,12,0.009999999776482582,Least squares - L2Reg,proximal point,70.37427416527751
+481,12,0.009999999776482582,Least squares - L2Reg,gradient,422.25116182594036
+482,12,0.05623413249850273,Least squares - L2Reg,proximal point,24.559881736773857
+483,12,0.05623413249850273,Least squares - L2Reg,gradient,220.8349774947837
+484,12,0.3162277638912201,Least squares - L2Reg,proximal point,21.515043009810217
+485,12,0.3162277638912201,Least squares - L2Reg,gradient,34.10179128799439
+486,12,1.778279423713684,Least squares - L2Reg,proximal point,31.355551738329655
+487,12,1.778279423713684,Least squares - L2Reg,gradient,
+488,12,10.0,Least squares - L2Reg,proximal point,114.07515235091039
+489,12,10.0,Least squares - L2Reg,gradient,
+490,12,0.009999999776482582,Least squares - L1Reg,proximal point,100.33594602400517
+491,12,0.009999999776482582,Least squares - L1Reg,gradient,433.04213561278954
+492,12,0.05623413249850273,Least squares - L1Reg,proximal point,57.01658874217169
+493,12,0.05623413249850273,Least squares - L1Reg,gradient,384.57070080595014
+494,12,0.3162277638912201,Least squares - L1Reg,proximal point,56.18997224911137
+495,12,0.3162277638912201,Least squares - L1Reg,gradient,70.59741457958222
+496,12,1.778279423713684,Least squares - L1Reg,proximal point,86.88372378318248
+497,12,1.778279423713684,Least squares - L1Reg,gradient,
+498,12,10.0,Least squares - L1Reg,proximal point,257.6320309648186
+499,12,10.0,Least squares - L1Reg,gradient,
+500,12,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5544161041575442
+501,12,0.009999999776482582,Logistic regression - L2Reg,gradient,0.691096024954319
+502,12,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4035622723519408
+503,12,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6432517275243997
+504,12,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3686743679838414
+505,12,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41155694334879517
+506,12,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39700671679868926
+507,12,1.778279423713684,Logistic regression - L2Reg,gradient,0.7481871758773923
+508,12,10.0,Logistic regression - L2Reg,proximal point,0.5797832009246727
+509,12,10.0,Logistic regression - L2Reg,gradient,110.10745600905419
+510,12,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952601137126839
+511,12,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+512,12,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040306082623186
+513,12,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+514,12,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7386958343999525
+515,12,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954844656825065
+516,12,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8069551832949523
+517,12,1.778279423713684,Logistic regression - L1Reg,gradient,2.00250144084692
+518,12,10.0,Logistic regression - L1Reg,proximal point,0.8737317127419622
+519,12,10.0,Logistic regression - L1Reg,gradient,172.99840173277855
+520,13,0.009999999776482582,Least squares - L2Reg,proximal point,71.43695246052654
+521,13,0.009999999776482582,Least squares - L2Reg,gradient,421.7786637701813
+522,13,0.05623413249850273,Least squares - L2Reg,proximal point,23.90273845473719
+523,13,0.05623413249850273,Least squares - L2Reg,gradient,228.20079116590992
+524,13,0.3162277638912201,Least squares - L2Reg,proximal point,21.600474160710476
+525,13,0.3162277638912201,Least squares - L2Reg,gradient,30.07068064222336
+526,13,1.778279423713684,Least squares - L2Reg,proximal point,31.12662090722005
+527,13,1.778279423713684,Least squares - L2Reg,gradient,
+528,13,10.0,Least squares - L2Reg,proximal point,113.77904196072808
+529,13,10.0,Least squares - L2Reg,gradient,
+530,13,0.009999999776482582,Least squares - L1Reg,proximal point,103.90960293052694
+531,13,0.009999999776482582,Least squares - L1Reg,gradient,433.0426183906503
+532,13,0.05623413249850273,Least squares - L1Reg,proximal point,57.022784715534165
+533,13,0.05623413249850273,Least squares - L1Reg,gradient,386.58609663796426
+534,13,0.3162277638912201,Least squares - L1Reg,proximal point,55.95478185679065
+535,13,0.3162277638912201,Least squares - L1Reg,gradient,67.51524059772491
+536,13,1.778279423713684,Least squares - L1Reg,proximal point,87.15865118995684
+537,13,1.778279423713684,Least squares - L1Reg,gradient,
+538,13,10.0,Least squares - L1Reg,proximal point,261.475294647858
+539,13,10.0,Least squares - L1Reg,gradient,
+540,13,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5534327878733698
+541,13,0.009999999776482582,Logistic regression - L2Reg,gradient,0.691132460808754
+542,13,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4051908104752641
+543,13,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6421631016939878
+544,13,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3691972947684277
+545,13,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4128571283631027
+546,13,1.778279423713684,Logistic regression - L2Reg,proximal point,0.399943321856114
+547,13,1.778279423713684,Logistic regression - L2Reg,gradient,0.709068209567666
+548,13,10.0,Logistic regression - L2Reg,proximal point,0.5964122722754336
+549,13,10.0,Logistic regression - L2Reg,gradient,111.39889353060722
+550,13,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952632820686357
+551,13,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+552,13,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040289044276804
+553,13,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+554,13,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388366606058514
+555,13,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954013970196247
+556,13,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8069733733558374
+557,13,1.778279423713684,Logistic regression - L1Reg,gradient,1.923567365795374
+558,13,10.0,Logistic regression - L1Reg,proximal point,0.8540378337268736
+559,13,10.0,Logistic regression - L1Reg,gradient,216.00205333800315
+560,14,0.009999999776482582,Least squares - L2Reg,proximal point,71.55503796719039
+561,14,0.009999999776482582,Least squares - L2Reg,gradient,421.7846263407191
+562,14,0.05623413249850273,Least squares - L2Reg,proximal point,24.118382019177652
+563,14,0.05623413249850273,Least squares - L2Reg,gradient,220.85772296262235
+564,14,0.3162277638912201,Least squares - L2Reg,proximal point,21.60356422204656
+565,14,0.3162277638912201,Least squares - L2Reg,gradient,29.903688040065767
+566,14,1.778279423713684,Least squares - L2Reg,proximal point,31.406725860960705
+567,14,1.778279423713684,Least squares - L2Reg,gradient,
+568,14,10.0,Least squares - L2Reg,proximal point,115.57838851933097
+569,14,10.0,Least squares - L2Reg,gradient,
+570,14,0.009999999776482582,Least squares - L1Reg,proximal point,104.361392638576
+571,14,0.009999999776482582,Least squares - L1Reg,gradient,433.0421455729656
+572,14,0.05623413249850273,Least squares - L1Reg,proximal point,57.11137999503724
+573,14,0.05623413249850273,Least squares - L1Reg,gradient,384.3033759203672
+574,14,0.3162277638912201,Least squares - L1Reg,proximal point,56.21906403193561
+575,14,0.3162277638912201,Least squares - L1Reg,gradient,89.6351736541748
+576,14,1.778279423713684,Least squares - L1Reg,proximal point,85.86857059852561
+577,14,1.778279423713684,Least squares - L1Reg,gradient,
+578,14,10.0,Least squares - L1Reg,proximal point,263.276558278919
+579,14,10.0,Least squares - L1Reg,gradient,
+580,14,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5521593914997163
+581,14,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911441528916359
+582,14,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4058030460895304
+583,14,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6424032113224268
+584,14,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36784295572641357
+585,14,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4110870487909764
+586,14,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39975686211503636
+587,14,1.778279423713684,Logistic regression - L2Reg,gradient,0.7980169252634048
+588,14,10.0,Logistic regression - L2Reg,proximal point,0.5876842054847626
+589,14,10.0,Logistic regression - L2Reg,gradient,107.82481679987907
+590,14,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952602284461309
+591,14,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+592,14,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040263064385196
+593,14,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+594,14,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387562776948122
+595,14,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954508007764816
+596,14,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8071079863701176
+597,14,1.778279423713684,Logistic regression - L1Reg,gradient,1.924018438488245
+598,14,10.0,Logistic regression - L1Reg,proximal point,0.8561111037532461
+599,14,10.0,Logistic regression - L1Reg,gradient,184.65855659804345
+600,15,0.009999999776482582,Least squares - L2Reg,proximal point,70.82755245499376
+601,15,0.009999999776482582,Least squares - L2Reg,gradient,421.85128022794305
+602,15,0.05623413249850273,Least squares - L2Reg,proximal point,24.093227985979336
+603,15,0.05623413249850273,Least squares - L2Reg,gradient,218.59194005696773
+604,15,0.3162277638912201,Least squares - L2Reg,proximal point,21.61661170291425
+605,15,0.3162277638912201,Least squares - L2Reg,gradient,38.51103751449585
+606,15,1.778279423713684,Least squares - L2Reg,proximal point,31.013047711500292
+607,15,1.778279423713684,Least squares - L2Reg,gradient,
+608,15,10.0,Least squares - L2Reg,proximal point,113.00126587845585
+609,15,10.0,Least squares - L2Reg,gradient,
+610,15,0.009999999776482582,Least squares - L1Reg,proximal point,99.15149342522312
+611,15,0.009999999776482582,Least squares - L1Reg,gradient,433.0416779024543
+612,15,0.05623413249850273,Least squares - L1Reg,proximal point,56.74093167073842
+613,15,0.05623413249850273,Least squares - L1Reg,gradient,391.0243940711677
+614,15,0.3162277638912201,Least squares - L1Reg,proximal point,56.4593846005764
+615,15,0.3162277638912201,Least squares - L1Reg,gradient,114.23644426078796
+616,15,1.778279423713684,Least squares - L1Reg,proximal point,86.87400089321463
+617,15,1.778279423713684,Least squares - L1Reg,gradient,
+618,15,10.0,Least squares - L1Reg,proximal point,260.44332242025354
+619,15,10.0,Least squares - L1Reg,gradient,
+620,15,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.555068732517569
+621,15,0.009999999776482582,Logistic regression - L2Reg,gradient,0.691104910260439
+622,15,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4035883658380942
+623,15,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6433798099309206
+624,15,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3680875678675132
+625,15,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4109581136841327
+626,15,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3960147857846893
+627,15,1.778279423713684,Logistic regression - L2Reg,gradient,0.8069345684513449
+628,15,10.0,Logistic regression - L2Reg,proximal point,0.6021992242660972
+629,15,10.0,Logistic regression - L2Reg,gradient,104.63374364104271
+630,15,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952644394252595
+631,15,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+632,15,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040318801596038
+633,15,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+634,15,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7389188602977635
+635,15,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954166617631912
+636,15,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8068365741806495
+637,15,1.778279423713684,Logistic regression - L1Reg,gradient,2.0102551930487156
+638,15,10.0,Logistic regression - L1Reg,proximal point,0.8585672856241666
+639,15,10.0,Logistic regression - L1Reg,gradient,194.56707753157616
+640,16,0.009999999776482582,Least squares - L2Reg,proximal point,70.97196696710793
+641,16,0.009999999776482582,Least squares - L2Reg,gradient,421.79915105103356
+642,16,0.05623413249850273,Least squares - L2Reg,proximal point,23.912830823960377
+643,16,0.05623413249850273,Least squares - L2Reg,gradient,221.19386909965576
+644,16,0.3162277638912201,Least squares - L2Reg,proximal point,21.591034961002343
+645,16,0.3162277638912201,Least squares - L2Reg,gradient,40.48068568353653
+646,16,1.778279423713684,Least squares - L2Reg,proximal point,31.083760570153427
+647,16,1.778279423713684,Least squares - L2Reg,gradient,
+648,16,10.0,Least squares - L2Reg,proximal point,119.33895612882309
+649,16,10.0,Least squares - L2Reg,gradient,
+650,16,0.009999999776482582,Least squares - L1Reg,proximal point,102.33211288991849
+651,16,0.009999999776482582,Least squares - L1Reg,gradient,433.0411846742295
+652,16,0.05623413249850273,Least squares - L1Reg,proximal point,56.61725243811026
+653,16,0.05623413249850273,Least squares - L1Reg,gradient,390.72017764635086
+654,16,0.3162277638912201,Least squares - L1Reg,proximal point,56.21221977298286
+655,16,0.3162277638912201,Least squares - L1Reg,gradient,91.85083782157898
+656,16,1.778279423713684,Least squares - L1Reg,proximal point,87.32978344830717
+657,16,1.778279423713684,Least squares - L1Reg,gradient,
+658,16,10.0,Least squares - L1Reg,proximal point,260.5845666518384
+659,16,10.0,Least squares - L1Reg,gradient,
+660,16,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.553648348995965
+661,16,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910646045267582
+662,16,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4035883658380942
+663,16,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6433798099309206
+664,16,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3679506211063098
+665,16,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4118940814230591
+666,16,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39971746101450933
+667,16,1.778279423713684,Logistic regression - L2Reg,gradient,0.7315470261856913
+668,16,10.0,Logistic regression - L2Reg,proximal point,0.5976043072003304
+669,16,10.0,Logistic regression - L2Reg,gradient,110.91838914618492
+670,16,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.695268689598299
+671,16,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+672,16,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.704046911856001
+673,16,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+674,16,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388685963299264
+675,16,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954291177093983
+676,16,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8068365741806495
+677,16,1.778279423713684,Logistic regression - L1Reg,gradient,2.0102551930487156
+678,16,10.0,Logistic regression - L1Reg,proximal point,0.8502930639074495
+679,16,10.0,Logistic regression - L1Reg,gradient,185.99030387778282
+680,17,0.009999999776482582,Least squares - L2Reg,proximal point,68.16210262259709
+681,17,0.009999999776482582,Least squares - L2Reg,gradient,422.38921738083206
+682,17,0.05623413249850273,Least squares - L2Reg,proximal point,23.85819938688415
+683,17,0.05623413249850273,Least squares - L2Reg,gradient,227.1003769354783
+684,17,0.3162277638912201,Least squares - L2Reg,proximal point,21.59390480418621
+685,17,0.3162277638912201,Least squares - L2Reg,gradient,27.985920243287087
+686,17,1.778279423713684,Least squares - L2Reg,proximal point,31.065630190103583
+687,17,1.778279423713684,Least squares - L2Reg,gradient,
+688,17,10.0,Least squares - L2Reg,proximal point,113.4741821045768
+689,17,10.0,Least squares - L2Reg,gradient,
+690,17,0.009999999776482582,Least squares - L1Reg,proximal point,101.39139909435625
+691,17,0.009999999776482582,Least squares - L1Reg,gradient,433.04208745029206
+692,17,0.05623413249850273,Least squares - L1Reg,proximal point,56.61725243811026
+693,17,0.05623413249850273,Least squares - L1Reg,gradient,390.72017764635086
+694,17,0.3162277638912201,Least squares - L1Reg,proximal point,56.207557019134725
+695,17,0.3162277638912201,Least squares - L1Reg,gradient,87.20776646652222
+696,17,1.778279423713684,Least squares - L1Reg,proximal point,87.19697296542184
+697,17,1.778279423713684,Least squares - L1Reg,gradient,
+698,17,10.0,Least squares - L1Reg,proximal point,263.23391926805203
+699,17,10.0,Least squares - L1Reg,gradient,
+700,17,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5522845388941446
+701,17,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910918549954891
+702,17,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40469706871306155
+703,17,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6424536930561066
+704,17,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3677750646241598
+705,17,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4122591279201209
+706,17,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3993220897902847
+707,17,1.778279423713684,Logistic regression - L2Reg,gradient,0.8050468937695027
+708,17,10.0,Logistic regression - L2Reg,proximal point,0.5990084613214929
+709,17,10.0,Logistic regression - L2Reg,gradient,110.32788910880089
+710,17,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952604809491739
+711,17,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+712,17,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040305051838264
+713,17,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+714,17,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387661042026322
+715,17,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954170233547687
+716,17,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8074414465014508
+717,17,1.778279423713684,Logistic regression - L1Reg,gradient,2.0410140362501146
+718,17,10.0,Logistic regression - L1Reg,proximal point,0.8468048166118968
+719,17,10.0,Logistic regression - L1Reg,gradient,200.29760954298973
+720,18,0.009999999776482582,Least squares - L2Reg,proximal point,71.08673161102136
+721,18,0.009999999776482582,Least squares - L2Reg,gradient,421.90252033205775
+722,18,0.05623413249850273,Least squares - L2Reg,proximal point,24.006077247506735
+723,18,0.05623413249850273,Least squares - L2Reg,gradient,227.72935635475255
+724,18,0.3162277638912201,Least squares - L2Reg,proximal point,21.703894419165714
+725,18,0.3162277638912201,Least squares - L2Reg,gradient,46.521328378772736
+726,18,1.778279423713684,Least squares - L2Reg,proximal point,31.359814746299374
+727,18,1.778279423713684,Least squares - L2Reg,gradient,
+728,18,10.0,Least squares - L2Reg,proximal point,115.67776105597723
+729,18,10.0,Least squares - L2Reg,gradient,
+730,18,0.009999999776482582,Least squares - L1Reg,proximal point,104.97825985462579
+731,18,0.009999999776482582,Least squares - L1Reg,gradient,433.0423021322269
+732,18,0.05623413249850273,Least squares - L1Reg,proximal point,56.80946081854677
+733,18,0.05623413249850273,Least squares - L1Reg,gradient,385.84636505651474
+734,18,0.3162277638912201,Least squares - L1Reg,proximal point,56.00534944544356
+735,18,0.3162277638912201,Least squares - L1Reg,gradient,70.53406711368561
+736,18,1.778279423713684,Least squares - L1Reg,proximal point,87.42497926852849
+737,18,1.778279423713684,Least squares - L1Reg,gradient,
+738,18,10.0,Least squares - L1Reg,proximal point,260.9491726751093
+739,18,10.0,Least squares - L1Reg,gradient,
+740,18,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5517704513951013
+741,18,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911277592599392
+742,18,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40338849256058923
+743,18,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6420463117063046
+744,18,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3688301216946938
+745,18,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4118240344755352
+746,18,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3971532577146959
+747,18,1.778279423713684,Logistic regression - L2Reg,gradient,0.7866675131842494
+748,18,10.0,Logistic regression - L2Reg,proximal point,0.592478889796624
+749,18,10.0,Logistic regression - L2Reg,gradient,110.09602729830742
+750,18,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952671210593863
+751,18,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+752,18,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040381341816859
+753,18,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+754,18,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387143595416598
+755,18,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954439144492149
+756,18,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8070355192620841
+757,18,1.778279423713684,Logistic regression - L1Reg,gradient,2.0231736356317995
+758,18,10.0,Logistic regression - L1Reg,proximal point,0.8721916080013125
+759,18,10.0,Logistic regression - L1Reg,gradient,198.9355509130001
+760,19,0.009999999776482582,Least squares - L2Reg,proximal point,68.79455486230162
+761,19,0.009999999776482582,Least squares - L2Reg,gradient,421.8695152941238
+762,19,0.05623413249850273,Least squares - L2Reg,proximal point,24.017093866337433
+763,19,0.05623413249850273,Least squares - L2Reg,gradient,223.27891123528033
+764,19,0.3162277638912201,Least squares - L2Reg,proximal point,21.539205438908578
+765,19,0.3162277638912201,Least squares - L2Reg,gradient,45.62740858573913
+766,19,1.778279423713684,Least squares - L2Reg,proximal point,31.06419724644546
+767,19,1.778279423713684,Least squares - L2Reg,gradient,
+768,19,10.0,Least squares - L2Reg,proximal point,113.30865775543023
+769,19,10.0,Least squares - L2Reg,gradient,
+770,19,0.009999999776482582,Least squares - L1Reg,proximal point,102.67522531825128
+771,19,0.009999999776482582,Least squares - L1Reg,gradient,433.0418586490981
+772,19,0.05623413249850273,Least squares - L1Reg,proximal point,56.552781489149375
+773,19,0.05623413249850273,Least squares - L1Reg,gradient,392.7766743477702
+774,19,0.3162277638912201,Least squares - L1Reg,proximal point,56.094677981073886
+775,19,0.3162277638912201,Least squares - L1Reg,gradient,79.41061641554832
+776,19,1.778279423713684,Least squares - L1Reg,proximal point,86.68421790511383
+777,19,1.778279423713684,Least squares - L1Reg,gradient,
+778,19,10.0,Least squares - L1Reg,proximal point,262.5523332663755
+779,19,10.0,Least squares - L1Reg,gradient,
+780,19,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5524150908911092
+781,19,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910879601240159
+782,19,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40485592152063304
+783,19,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6424313376426697
+784,19,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3682531567047235
+785,19,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4122474274136126
+786,19,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39852697156089095
+787,19,1.778279423713684,Logistic regression - L2Reg,gradient,0.7454797152504324
+788,19,10.0,Logistic regression - L2Reg,proximal point,0.6096722209991349
+789,19,10.0,Logistic regression - L2Reg,gradient,111.48298340258599
+790,19,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952619687987809
+791,19,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+792,19,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040173960842139
+793,19,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+794,19,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387306722869895
+795,19,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954484856963158
+796,19,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8067044529018025
+797,19,1.778279423713684,Logistic regression - L1Reg,gradient,1.9320451103687286
+798,19,10.0,Logistic regression - L1Reg,proximal point,0.8572995362074866
+799,19,10.0,Logistic regression - L1Reg,gradient,181.28686027503014
+800,20,0.009999999776482582,Least squares - L2Reg,proximal point,69.73051473762703
+801,20,0.009999999776482582,Least squares - L2Reg,gradient,421.88137385932265
+802,20,0.05623413249850273,Least squares - L2Reg,proximal point,23.89894399676589
+803,20,0.05623413249850273,Least squares - L2Reg,gradient,221.96001566135584
+804,20,0.3162277638912201,Least squares - L2Reg,proximal point,21.669253828237128
+805,20,0.3162277638912201,Least squares - L2Reg,gradient,105.67205860710143
+806,20,1.778279423713684,Least squares - L2Reg,proximal point,31.195320687993593
+807,20,1.778279423713684,Least squares - L2Reg,gradient,
+808,20,10.0,Least squares - L2Reg,proximal point,114.25595069439332
+809,20,10.0,Least squares - L2Reg,gradient,
+810,20,0.009999999776482582,Least squares - L1Reg,proximal point,101.76571112520918
+811,20,0.009999999776482582,Least squares - L1Reg,gradient,433.04171740053846
+812,20,0.05623413249850273,Least squares - L1Reg,proximal point,56.650649912062086
+813,20,0.05623413249850273,Least squares - L1Reg,gradient,390.1825885761261
+814,20,0.3162277638912201,Least squares - L1Reg,proximal point,56.17154367514733
+815,20,0.3162277638912201,Least squares - L1Reg,gradient,72.86053316345215
+816,20,1.778279423713684,Least squares - L1Reg,proximal point,86.27155608624497
+817,20,1.778279423713684,Least squares - L1Reg,gradient,
+818,20,10.0,Least squares - L1Reg,proximal point,262.6317626814618
+819,20,10.0,Least squares - L1Reg,gradient,
+820,20,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5523842193197321
+821,20,0.009999999776482582,Logistic regression - L2Reg,gradient,0.691123332375288
+822,20,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40485592152063304
+823,20,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6424313376426697
+824,20,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3684881141375862
+825,20,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4125956092435867
+826,20,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39749992093413866
+827,20,1.778279423713684,Logistic regression - L2Reg,gradient,0.7352243816062808
+828,20,10.0,Logistic regression - L2Reg,proximal point,0.5730322758050451
+829,20,10.0,Logistic regression - L2Reg,gradient,114.54438381876946
+830,20,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952707713050963
+831,20,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+832,20,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040328702010269
+833,20,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+834,20,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7389176430096502
+835,20,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954458071231842
+836,20,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8063856711391608
+837,20,1.778279423713684,Logistic regression - L1Reg,gradient,2.0140234075307846
+838,20,10.0,Logistic regression - L1Reg,proximal point,0.8651653686932844
+839,20,10.0,Logistic regression - L1Reg,gradient,217.18606977210044
+840,21,0.009999999776482582,Least squares - L2Reg,proximal point,68.29036460045035
+841,21,0.009999999776482582,Least squares - L2Reg,gradient,422.62307887707817
+842,21,0.05623413249850273,Least squares - L2Reg,proximal point,23.814821487103504
+843,21,0.05623413249850273,Least squares - L2Reg,gradient,218.6643625625521
+844,21,0.3162277638912201,Least squares - L2Reg,proximal point,21.6482565358529
+845,21,0.3162277638912201,Least squares - L2Reg,gradient,30.07742884464264
+846,21,1.778279423713684,Least squares - L2Reg,proximal point,31.325512556011432
+847,21,1.778279423713684,Least squares - L2Reg,gradient,
+848,21,10.0,Least squares - L2Reg,proximal point,112.14327408474216
+849,21,10.0,Least squares - L2Reg,gradient,
+850,21,0.009999999776482582,Least squares - L1Reg,proximal point,104.95503505394899
+851,21,0.009999999776482582,Least squares - L1Reg,gradient,433.04206713698915
+852,21,0.05623413249850273,Least squares - L1Reg,proximal point,56.91185475563109
+853,21,0.05623413249850273,Least squares - L1Reg,gradient,384.95687272863387
+854,21,0.3162277638912201,Least squares - L1Reg,proximal point,56.24169518746101
+855,21,0.3162277638912201,Least squares - L1Reg,gradient,166.68054124450683
+856,21,1.778279423713684,Least squares - L1Reg,proximal point,87.37146421751818
+857,21,1.778279423713684,Least squares - L1Reg,gradient,
+858,21,10.0,Least squares - L1Reg,proximal point,261.6096389003642
+859,21,10.0,Least squares - L1Reg,gradient,
+860,21,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.553295612456835
+861,21,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911369265675544
+862,21,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4056695149186682
+863,21,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6423783572047949
+864,21,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3678505014485935
+865,21,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4121990806248039
+866,21,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3975904855977196
+867,21,1.778279423713684,Logistic regression - L2Reg,gradient,0.769156471978128
+868,21,10.0,Logistic regression - L2Reg,proximal point,0.5872104797934535
+869,21,10.0,Logistic regression - L2Reg,gradient,113.44977983202934
+870,21,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952640700570566
+871,21,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+872,21,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040124270352245
+873,21,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+874,21,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7387306722869895
+875,21,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954484856963158
+876,21,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8068188529551705
+877,21,1.778279423713684,Logistic regression - L1Reg,gradient,2.041776616358757
+878,21,10.0,Logistic regression - L1Reg,proximal point,0.8638843732922565
+879,21,10.0,Logistic regression - L1Reg,gradient,187.8804019261837
+880,22,0.009999999776482582,Least squares - L2Reg,proximal point,70.59775299286878
+881,22,0.009999999776482582,Least squares - L2Reg,gradient,421.8146399629787
+882,22,0.05623413249850273,Least squares - L2Reg,proximal point,23.714242285909982
+883,22,0.05623413249850273,Least squares - L2Reg,gradient,225.8160120724246
+884,22,0.3162277638912201,Least squares - L2Reg,proximal point,21.658876232696755
+885,22,0.3162277638912201,Least squares - L2Reg,gradient,44.507627140712735
+886,22,1.778279423713684,Least squares - L2Reg,proximal point,31.406613930381393
+887,22,1.778279423713684,Least squares - L2Reg,gradient,
+888,22,10.0,Least squares - L2Reg,proximal point,114.19439362121975
+889,22,10.0,Least squares - L2Reg,gradient,
+890,22,0.009999999776482582,Least squares - L1Reg,proximal point,101.76571112520918
+891,22,0.009999999776482582,Least squares - L1Reg,gradient,433.04171740053846
+892,22,0.05623413249850273,Least squares - L1Reg,proximal point,57.16643008837541
+893,22,0.05623413249850273,Least squares - L1Reg,gradient,387.78602407581803
+894,22,0.3162277638912201,Least squares - L1Reg,proximal point,56.00446697456014
+895,22,0.3162277638912201,Least squares - L1Reg,gradient,82.91521061706543
+896,22,1.778279423713684,Least squares - L1Reg,proximal point,87.1751796748626
+897,22,1.778279423713684,Least squares - L1Reg,gradient,
+898,22,10.0,Least squares - L1Reg,proximal point,262.6317626814618
+899,22,10.0,Least squares - L1Reg,gradient,
+900,22,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5547979409758448
+901,22,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911171560049058
+902,22,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4038780486869057
+903,22,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6429935117185116
+904,22,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.368164120782301
+905,22,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4106090736180544
+906,22,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39963395159772985
+907,22,1.778279423713684,Logistic regression - L2Reg,gradient,0.784401198990643
+908,22,10.0,Logistic regression - L2Reg,proximal point,0.5999101478649621
+909,22,10.0,Logistic regression - L2Reg,gradient,107.4246368001461
+910,22,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952673519089594
+911,22,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+912,22,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040312165226846
+913,22,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+914,22,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7389176430096502
+915,22,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954458071231842
+916,22,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8071931379754351
+917,22,1.778279423713684,Logistic regression - L1Reg,gradient,1.9833659434735775
+918,22,10.0,Logistic regression - L1Reg,proximal point,0.8643873317191925
+919,22,10.0,Logistic regression - L1Reg,gradient,206.37588798155784
+920,23,0.009999999776482582,Least squares - L2Reg,proximal point,69.48506925918859
+921,23,0.009999999776482582,Least squares - L2Reg,gradient,422.2317718954179
+922,23,0.05623413249850273,Least squares - L2Reg,proximal point,24.079838919260606
+923,23,0.05623413249850273,Least squares - L2Reg,gradient,221.2473625767149
+924,23,0.3162277638912201,Least squares - L2Reg,proximal point,21.510674012370366
+925,23,0.3162277638912201,Least squares - L2Reg,gradient,30.639524913692476
+926,23,1.778279423713684,Least squares - L2Reg,proximal point,31.121138911628933
+927,23,1.778279423713684,Least squares - L2Reg,gradient,
+928,23,10.0,Least squares - L2Reg,proximal point,114.20616014670497
+929,23,10.0,Least squares - L2Reg,gradient,
+930,23,0.009999999776482582,Least squares - L1Reg,proximal point,104.95503505394899
+931,23,0.009999999776482582,Least squares - L1Reg,gradient,433.04206713698915
+932,23,0.05623413249850273,Least squares - L1Reg,proximal point,56.90851270642492
+933,23,0.05623413249850273,Least squares - L1Reg,gradient,386.0964750569105
+934,23,0.3162277638912201,Least squares - L1Reg,proximal point,56.19116315540053
+935,23,0.3162277638912201,Least squares - L1Reg,gradient,70.9585711227417
+936,23,1.778279423713684,Least squares - L1Reg,proximal point,87.30565266575209
+937,23,1.778279423713684,Least squares - L1Reg,gradient,
+938,23,10.0,Least squares - L1Reg,proximal point,259.6175083731039
+939,23,10.0,Least squares - L1Reg,gradient,
+940,23,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.552836050254698
+941,23,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911059115171433
+942,23,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40315871616362914
+943,23,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6421837595671416
+944,23,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3679038868259863
+945,23,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41248825130350886
+946,23,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3983559470877839
+947,23,1.778279423713684,Logistic regression - L2Reg,gradient,0.8170574981734157
+948,23,10.0,Logistic regression - L2Reg,proximal point,0.603281089844227
+949,23,10.0,Logistic regression - L2Reg,gradient,112.63936817069053
+950,23,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.695261113577892
+951,23,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+952,23,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040243573869345
+953,23,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+954,23,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388252766206449
+955,23,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954333683371544
+956,23,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8073764546262614
+957,23,1.778279423713684,Logistic regression - L1Reg,gradient,1.9629957347273828
+958,23,10.0,Logistic regression - L1Reg,proximal point,0.8687883826093572
+959,23,10.0,Logistic regression - L1Reg,gradient,183.33834990286826
+960,24,0.009999999776482582,Least squares - L2Reg,proximal point,71.0293534850404
+961,24,0.009999999776482582,Least squares - L2Reg,gradient,422.1014872720411
+962,24,0.05623413249850273,Least squares - L2Reg,proximal point,23.958872301447865
+963,24,0.05623413249850273,Least squares - L2Reg,gradient,228.32775636499375
+964,24,0.3162277638912201,Least squares - L2Reg,proximal point,21.54509886381471
+965,24,0.3162277638912201,Least squares - L2Reg,gradient,36.81947163038254
+966,24,1.778279423713684,Least squares - L2Reg,proximal point,31.263641784695555
+967,24,1.778279423713684,Least squares - L2Reg,gradient,
+968,24,10.0,Least squares - L2Reg,proximal point,112.91497769368523
+969,24,10.0,Least squares - L2Reg,gradient,
+970,24,0.009999999776482582,Least squares - L1Reg,proximal point,100.82895791592183
+971,24,0.009999999776482582,Least squares - L1Reg,gradient,433.0414268088476
+972,24,0.05623413249850273,Least squares - L1Reg,proximal point,56.75988065620702
+973,24,0.05623413249850273,Least squares - L1Reg,gradient,389.0699471199036
+974,24,0.3162277638912201,Least squares - L1Reg,proximal point,56.25020143568574
+975,24,0.3162277638912201,Least squares - L1Reg,gradient,79.09612761295288
+976,24,1.778279423713684,Least squares - L1Reg,proximal point,87.07318180316406
+977,24,1.778279423713684,Least squares - L1Reg,gradient,
+978,24,10.0,Least squares - L1Reg,proximal point,261.94330473988924
+979,24,10.0,Least squares - L1Reg,gradient,
+980,24,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.554313159804134
+981,24,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911099646508694
+982,24,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40174766283796187
+983,24,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6425280315101146
+984,24,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36751661756299625
+985,24,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4114043821305037
+986,24,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39922177479446075
+987,24,1.778279423713684,Logistic regression - L2Reg,gradient,0.7674362155497074
+988,24,10.0,Logistic regression - L2Reg,proximal point,0.5935737237035482
+989,24,10.0,Logistic regression - L2Reg,gradient,113.78179681982994
+990,24,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952696402981171
+991,24,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+992,24,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040397959611436
+993,24,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+994,24,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7389072476176363
+995,24,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954641775846482
+996,24,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8073248386279815
+997,24,1.778279423713684,Logistic regression - L1Reg,gradient,1.9356102866351605
+998,24,10.0,Logistic regression - L1Reg,proximal point,0.8735249503129465
+999,24,10.0,Logistic regression - L1Reg,gradient,181.78544986014367
+1000,25,0.009999999776482582,Least squares - L2Reg,proximal point,72.18708337836117
+1001,25,0.009999999776482582,Least squares - L2Reg,gradient,422.15625070906077
+1002,25,0.05623413249850273,Least squares - L2Reg,proximal point,24.143001255587667
+1003,25,0.05623413249850273,Least squares - L2Reg,gradient,224.43960206257327
+1004,25,0.3162277638912201,Least squares - L2Reg,proximal point,21.62719688843476
+1005,25,0.3162277638912201,Least squares - L2Reg,gradient,55.30350017385483
+1006,25,1.778279423713684,Least squares - L2Reg,proximal point,31.286127973002593
+1007,25,1.778279423713684,Least squares - L2Reg,gradient,
+1008,25,10.0,Least squares - L2Reg,proximal point,114.05586926478078
+1009,25,10.0,Least squares - L2Reg,gradient,
+1010,25,0.009999999776482582,Least squares - L1Reg,proximal point,95.68731471781122
+1011,25,0.009999999776482582,Least squares - L1Reg,gradient,433.0420731418576
+1012,25,0.05623413249850273,Least squares - L1Reg,proximal point,56.88719622157733
+1013,25,0.05623413249850273,Least squares - L1Reg,gradient,387.75414747364965
+1014,25,0.3162277638912201,Least squares - L1Reg,proximal point,56.138394894428934
+1015,25,0.3162277638912201,Least squares - L1Reg,gradient,71.94520586452484
+1016,25,1.778279423713684,Least squares - L1Reg,proximal point,86.11810489361947
+1017,25,1.778279423713684,Least squares - L1Reg,gradient,
+1018,25,10.0,Least squares - L1Reg,proximal point,259.57387462536485
+1019,25,10.0,Least squares - L1Reg,gradient,
+1020,25,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5522184400980661
+1021,25,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910927973866463
+1022,25,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4042476462411518
+1023,25,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6432976240456104
+1024,25,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36858558055533863
+1025,25,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4120774088203907
+1026,25,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3998354760583842
+1027,25,1.778279423713684,Logistic regression - L2Reg,gradient,0.7674073881179094
+1028,25,10.0,Logistic regression - L2Reg,proximal point,0.5841278390321605
+1029,25,10.0,Logistic regression - L2Reg,gradient,114.79632452197075
+1030,25,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952639649561191
+1031,25,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+1032,25,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040329281855596
+1033,25,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+1034,25,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.738695683563471
+1035,25,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954112190723419
+1036,25,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8068497145254638
+1037,25,1.778279423713684,Logistic regression - L1Reg,gradient,1.9716952835083008
+1038,25,10.0,Logistic regression - L1Reg,proximal point,0.8538538305409072
+1039,25,10.0,Logistic regression - L1Reg,gradient,186.46938533301355
+1040,26,0.009999999776482582,Least squares - L2Reg,proximal point,72.58920984608352
+1041,26,0.009999999776482582,Least squares - L2Reg,gradient,421.62271371023564
+1042,26,0.05623413249850273,Least squares - L2Reg,proximal point,24.153804125106575
+1043,26,0.05623413249850273,Least squares - L2Reg,gradient,227.48426098656952
+1044,26,0.3162277638912201,Least squares - L2Reg,proximal point,21.6811579645338
+1045,26,0.3162277638912201,Least squares - L2Reg,gradient,47.64667843694687
+1046,26,1.778279423713684,Least squares - L2Reg,proximal point,31.067322810945974
+1047,26,1.778279423713684,Least squares - L2Reg,gradient,
+1048,26,10.0,Least squares - L2Reg,proximal point,115.177961524141
+1049,26,10.0,Least squares - L2Reg,gradient,
+1050,26,0.009999999776482582,Least squares - L1Reg,proximal point,102.89699665639144
+1051,26,0.009999999776482582,Least squares - L1Reg,gradient,433.04158980124555
+1052,26,0.05623413249850273,Least squares - L1Reg,proximal point,56.983468831543064
+1053,26,0.05623413249850273,Least squares - L1Reg,gradient,388.12424674825667
+1054,26,0.3162277638912201,Least squares - L1Reg,proximal point,56.12899107679421
+1055,26,0.3162277638912201,Least squares - L1Reg,gradient,68.2798782913208
+1056,26,1.778279423713684,Least squares - L1Reg,proximal point,87.14532714391557
+1057,26,1.778279423713684,Least squares - L1Reg,gradient,
+1058,26,10.0,Least squares - L1Reg,proximal point,257.48585308930353
+1059,26,10.0,Least squares - L1Reg,gradient,
+1060,26,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5502305475630128
+1061,26,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911187649130821
+1062,26,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40526927999142115
+1063,26,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6426613471597433
+1064,26,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36714098932436157
+1065,26,0.3162277638912201,Logistic regression - L2Reg,gradient,0.41185714375935495
+1066,26,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3985319539546897
+1067,26,1.778279423713684,Logistic regression - L2Reg,gradient,0.8351970845878124
+1068,26,10.0,Logistic regression - L2Reg,proximal point,0.5939396701606785
+1069,26,10.0,Logistic regression - L2Reg,gradient,111.4172795199871
+1070,26,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952623401116514
+1071,26,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+1072,26,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040194675372713
+1073,26,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+1074,26,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388025424465539
+1075,26,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954595168530942
+1076,26,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8072614023345541
+1077,26,1.778279423713684,Logistic regression - L1Reg,gradient,1.9941285863399505
+1078,26,10.0,Logistic regression - L1Reg,proximal point,0.864184538027618
+1079,26,10.0,Logistic regression - L1Reg,gradient,179.65271529784204
+1080,27,0.009999999776482582,Least squares - L2Reg,proximal point,71.37878845457492
+1081,27,0.009999999776482582,Least squares - L2Reg,gradient,422.1635338231733
+1082,27,0.05623413249850273,Least squares - L2Reg,proximal point,24.066693647504767
+1083,27,0.05623413249850273,Least squares - L2Reg,gradient,219.394237617594
+1084,27,0.3162277638912201,Least squares - L2Reg,proximal point,21.670333630405345
+1085,27,0.3162277638912201,Least squares - L2Reg,gradient,106.9557101568222
+1086,27,1.778279423713684,Least squares - L2Reg,proximal point,31.143210345335135
+1087,27,1.778279423713684,Least squares - L2Reg,gradient,
+1088,27,10.0,Least squares - L2Reg,proximal point,114.43857722550723
+1089,27,10.0,Least squares - L2Reg,gradient,
+1090,27,0.009999999776482582,Least squares - L1Reg,proximal point,99.05442636779132
+1091,27,0.009999999776482582,Least squares - L1Reg,gradient,433.04133341970294
+1092,27,0.05623413249850273,Least squares - L1Reg,proximal point,57.019705579277556
+1093,27,0.05623413249850273,Least squares - L1Reg,gradient,392.71044985734227
+1094,27,0.3162277638912201,Least squares - L1Reg,proximal point,55.87923042050063
+1095,27,0.3162277638912201,Least squares - L1Reg,gradient,88.97757991905212
+1096,27,1.778279423713684,Least squares - L1Reg,proximal point,87.18990046480843
+1097,27,1.778279423713684,Least squares - L1Reg,gradient,
+1098,27,10.0,Least squares - L1Reg,proximal point,259.88645187539186
+1099,27,10.0,Least squares - L1Reg,gradient,
+1100,27,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5527350202692345
+1101,27,0.009999999776482582,Logistic regression - L2Reg,gradient,0.691100019145012
+1102,27,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4038542103723215
+1103,27,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6429325395584107
+1104,27,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.36764099943454764
+1105,27,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4118339880540967
+1106,27,1.778279423713684,Logistic regression - L2Reg,proximal point,0.3981949904513632
+1107,27,1.778279423713684,Logistic regression - L2Reg,gradient,0.7939699855878949
+1108,27,10.0,Logistic regression - L2Reg,proximal point,0.5995101262015432
+1109,27,10.0,Logistic regression - L2Reg,gradient,115.14072591433525
+1110,27,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952655389549687
+1111,27,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+1112,27,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040192571665603
+1113,27,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+1114,27,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7388056729798388
+1115,27,0.3162277638912201,Logistic regression - L1Reg,gradient,0.695473871487379
+1116,27,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8071304409992585
+1117,27,1.778279423713684,Logistic regression - L1Reg,gradient,1.9586312728881836
+1118,27,10.0,Logistic regression - L1Reg,proximal point,0.8593911282331054
+1119,27,10.0,Logistic regression - L1Reg,gradient,183.5876380502224
+1120,28,0.009999999776482582,Least squares - L2Reg,proximal point,72.87164325046713
+1121,28,0.009999999776482582,Least squares - L2Reg,gradient,421.9988449613259
+1122,28,0.05623413249850273,Least squares - L2Reg,proximal point,23.930895441868792
+1123,28,0.05623413249850273,Least squares - L2Reg,gradient,222.0675214646101
+1124,28,0.3162277638912201,Least squares - L2Reg,proximal point,21.569346888939087
+1125,28,0.3162277638912201,Least squares - L2Reg,gradient,42.51149050931931
+1126,28,1.778279423713684,Least squares - L2Reg,proximal point,30.913979289374872
+1127,28,1.778279423713684,Least squares - L2Reg,gradient,
+1128,28,10.0,Least squares - L2Reg,proximal point,113.3215539327244
+1129,28,10.0,Least squares - L2Reg,gradient,
+1130,28,0.009999999776482582,Least squares - L1Reg,proximal point,102.4985905502859
+1131,28,0.009999999776482582,Least squares - L1Reg,gradient,433.0415973772803
+1132,28,0.05623413249850273,Least squares - L1Reg,proximal point,57.01030477617885
+1133,28,0.05623413249850273,Least squares - L1Reg,gradient,385.97923924369815
+1134,28,0.3162277638912201,Least squares - L1Reg,proximal point,56.169370443461254
+1135,28,0.3162277638912201,Least squares - L1Reg,gradient,81.38654563446045
+1136,28,1.778279423713684,Least squares - L1Reg,proximal point,86.81720180785517
+1137,28,1.778279423713684,Least squares - L1Reg,gradient,
+1138,28,10.0,Least squares - L1Reg,proximal point,262.305321807582
+1139,28,10.0,Least squares - L1Reg,gradient,
+1140,28,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5516188833402682
+1141,28,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6911101475358009
+1142,28,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.4043023151567356
+1143,28,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6428143450915813
+1144,28,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3687706391107749
+1145,28,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4118498078383505
+1146,28,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39535162013329206
+1147,28,1.778279423713684,Logistic regression - L2Reg,gradient,0.7660793521329761
+1148,28,10.0,Logistic regression - L2Reg,proximal point,0.5851087802845433
+1149,28,10.0,Logistic regression - L2Reg,gradient,108.7577264321804
+1150,28,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952593802426114
+1151,28,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+1152,28,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040289826704667
+1153,28,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+1154,28,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7386971662702129
+1155,28,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954603228330613
+1156,28,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8066460005586852
+1157,28,1.778279423713684,Logistic regression - L1Reg,gradient,1.9639124444186689
+1158,28,10.0,Logistic regression - L1Reg,proximal point,0.8590388927688356
+1159,28,10.0,Logistic regression - L1Reg,gradient,215.69972927832603
+1160,29,0.009999999776482582,Least squares - L2Reg,proximal point,72.00157333955526
+1161,29,0.009999999776482582,Least squares - L2Reg,gradient,422.02637365463545
+1162,29,0.05623413249850273,Least squares - L2Reg,proximal point,24.04125741071312
+1163,29,0.05623413249850273,Least squares - L2Reg,gradient,225.96533895802946
+1164,29,0.3162277638912201,Least squares - L2Reg,proximal point,21.672219435411947
+1165,29,0.3162277638912201,Least squares - L2Reg,gradient,35.00485026960373
+1166,29,1.778279423713684,Least squares - L2Reg,proximal point,30.90450067982272
+1167,29,1.778279423713684,Least squares - L2Reg,gradient,
+1168,29,10.0,Least squares - L2Reg,proximal point,114.17401545564921
+1169,29,10.0,Least squares - L2Reg,gradient,
+1170,29,0.009999999776482582,Least squares - L1Reg,proximal point,100.68083415520856
+1171,29,0.009999999776482582,Least squares - L1Reg,gradient,433.04228256016
+1172,29,0.05623413249850273,Least squares - L1Reg,proximal point,56.90213354610537
+1173,29,0.05623413249850273,Least squares - L1Reg,gradient,387.26863698939087
+1174,29,0.3162277638912201,Least squares - L1Reg,proximal point,56.35582371941289
+1175,29,0.3162277638912201,Least squares - L1Reg,gradient,71.14464679584503
+1176,29,1.778279423713684,Least squares - L1Reg,proximal point,87.13931150730753
+1177,29,1.778279423713684,Least squares - L1Reg,gradient,
+1178,29,10.0,Least squares - L1Reg,proximal point,265.43559473176936
+1179,29,10.0,Least squares - L1Reg,gradient,
+1180,29,0.009999999776482582,Logistic regression - L2Reg,proximal point,0.5521135446084073
+1181,29,0.009999999776482582,Logistic regression - L2Reg,gradient,0.6910863218426705
+1182,29,0.05623413249850273,Logistic regression - L2Reg,proximal point,0.40439709448496386
+1183,29,0.05623413249850273,Logistic regression - L2Reg,gradient,0.6423760081052781
+1184,29,0.3162277638912201,Logistic regression - L2Reg,proximal point,0.3683354330981596
+1185,29,0.3162277638912201,Logistic regression - L2Reg,gradient,0.4129551280129701
+1186,29,1.778279423713684,Logistic regression - L2Reg,proximal point,0.39769728786339
+1187,29,1.778279423713684,Logistic regression - L2Reg,gradient,0.8191325267732144
+1188,29,10.0,Logistic regression - L2Reg,proximal point,0.5822003234667925
+1189,29,10.0,Logistic regression - L2Reg,gradient,110.04032267775536
+1190,29,0.009999999776482582,Logistic regression - L1Reg,proximal point,0.6952625035090678
+1191,29,0.009999999776482582,Logistic regression - L1Reg,gradient,0.6931471824645996
+1192,29,0.05623413249850273,Logistic regression - L1Reg,proximal point,0.7040109867321882
+1193,29,0.05623413249850273,Logistic regression - L1Reg,gradient,0.6931471824645996
+1194,29,0.3162277638912201,Logistic regression - L1Reg,proximal point,0.7389410775904062
+1195,29,0.3162277638912201,Logistic regression - L1Reg,gradient,0.6954286414504052
+1196,29,1.778279423713684,Logistic regression - L1Reg,proximal point,0.8070873049184083
+1197,29,1.778279423713684,Logistic regression - L1Reg,gradient,1.9660366432607175
+1198,29,10.0,Logistic regression - L1Reg,proximal point,0.8616709747778627
+1199,29,10.0,Logistic regression - L1Reg,gradient,183.6393411904812
