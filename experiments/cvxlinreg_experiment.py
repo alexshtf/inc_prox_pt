@@ -1,6 +1,8 @@
 import abc
+import itertools
 import math
 import time
+from functools import partial
 from typing import Callable
 
 import torch
@@ -9,9 +11,11 @@ import attr
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import torch.multiprocessing as mp
 
 from cvxlinreg import IncRegularizedConvexOnLinear, HalfSquared, Logistic, Regularizer, L2Reg, L1Reg
 from torch.utils.data import TensorDataset, DataLoader
+from torch.nn.functional import binary_cross_entropy_with_logits
 from tqdm.auto import tqdm
 
 
@@ -19,6 +23,7 @@ from tqdm.auto import tqdm
 class ExperimentDesc(abc.ABC):
     M: int = attr.attrib()
     N: int = attr.attrib()
+    type: str = attr.attrib()
     outer: Callable = attr.attrib()
     reg: Regularizer = attr.attrib()
     linear_transform: Callable = attr.attrib()
@@ -32,7 +37,7 @@ def run_experiment(desc: ExperimentDesc):
 
     # create binary labels in {-1, 1}, contaminated by noise
     labels = torch.mv(features, x_star) + torch.distributions.Normal(0, 0.02).sample((desc.N,))
-    labels = 2 * torch.heaviside(labels, torch.tensor([1.])) - 1
+    labels = torch.sign(labels)
 
     dataset = TensorDataset(features, labels)
 
@@ -55,7 +60,7 @@ def run_experiment(desc: ExperimentDesc):
     step_size = 0.0001
     opt = torch.optim.SGD(params=(x,), lr=step_size)
     loss = 0.
-    for i, (vecs, ys) in enumerate(DataLoader(dataset, batch_size=32), start=1):
+    for i, (vecs, ys) in enumerate(DataLoader(dataset, batch_size=desc.batch_size), start=1):
         opt.zero_grad()
 
         sample_loss = desc.cost(x, vecs, ys).mean()
@@ -73,58 +78,79 @@ def run_experiment(desc: ExperimentDesc):
     return proxpt_time, sgd_time, proxpt_loss, sgd_loss
 
 
-results = []
-for experiment in tqdm(range(30), desc='Experiment'):
-    for M in tqdm([1000, 5000, 10000], desc='Dim', leave=False):
-        for N in tqdm([500, 1000, 1500, 2000, 2500, 3000], desc='Sample size', leave=False):
-            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
-                M=M, N=N,
-                outer=HalfSquared, linear_transform=lambda a, y: (a, -y),
-                reg=L2Reg(0.0004),
-                cost=lambda x, vecs, ys: (torch.mv(vecs, x) - ys).square()
-            ))
-            results.append({
-                'experiment': experiment, 'dim': M, 'num_of_samples': N,
-                'type': 'L2-LS', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time})
-
-            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
-                M=M, N=N,
-                outer=HalfSquared, linear_transform=lambda a, y: (a, -y),
-                reg=L1Reg(0.02),
-                cost=lambda x, vecs, ys: (torch.mv(vecs, x) - ys).square()
-            ))
-            results.append({
-                'experiment': experiment, 'dim': M, 'num_of_samples': N,
-                'type': 'L1-LS', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time})
-
-            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
-                M=M, N=N,
-                reg=L2Reg(0.0004),
-                outer=Logistic, linear_transform=lambda a, y: (-y * a, torch.zeros(1)),
-                cost=lambda x, vecs, ys: torch.binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2)
-            ))
-            results.append({
-                'experiment': experiment, 'dim': M, 'num_of_samples': N,
-                'type': 'L2-LogReg', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time})
-
-            ppt_time, sgd_time, _, _ = run_experiment(ExperimentDesc(
-                M=M, N=N,
-                reg=L1Reg(0.02),
-                outer=Logistic, linear_transform=lambda a, y: (-y * a, torch.zeros(1)),
-                cost=lambda x, vecs, ys: torch.binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2)
-            ))
-            results.append({
-                'experiment': experiment, 'dim': M, 'num_of_samples': N,
-                'type': 'L1-LogReg', 'prox_pt_time': ppt_time, 'sgd_time': sgd_time})
+def ls_linear_transform(a, y):
+    return a, -y
 
 
-df = pd.DataFrame.from_records(results)
-df.to_csv('cvxlinreg_experiment.csv')
+def ls_cost(x, vecs, ys):
+    return (torch.mv(vecs, x) - ys).square() / 2.
 
-plt.figure(figsize=(16, 12))
-df = pd.read_csv('cvxlinreg_experiment.csv')
-df = df.drop(df[(df['dim'] == 300) & (df['sgd_time'] > 0.5)].index)
-sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
-sns.lmplot(data=df, x='sgd_time', y='prox_pt_time', hue='type',
-           col='dim', col_wrap=3, palette="Set1", ci=None, facet_kws=dict(sharex=False, sharey=False))
-plt.show()
+
+def logreg_linear_transform(a, y):
+    return -y * a, 0
+
+
+def logreg_cost(x, vecs, ys):
+    return binary_cross_entropy_with_logits(torch.mv(vecs, x), (ys + 1) / 2, reduction='none')
+
+
+l2ls = partial(
+    ExperimentDesc,
+    outer=HalfSquared,
+    linear_transform=ls_linear_transform,
+    reg=L2Reg(0.0004),
+    cost=ls_cost,
+    type='L2-LS'
+)
+l1ls = partial(
+    ExperimentDesc,
+    outer=HalfSquared,
+    linear_transform=ls_linear_transform,
+    reg=L1Reg(0.02),
+    cost=ls_cost,
+    type='L1-LS'
+)
+l2logreg = partial(
+    ExperimentDesc,
+    outer=Logistic,
+    linear_transform=logreg_linear_transform,
+    reg=L2Reg(0.0004),
+    cost=logreg_cost,
+    type='L2-LogReg'
+)
+l1logreg = partial(
+    ExperimentDesc,
+    outer=Logistic,
+    linear_transform=logreg_linear_transform,
+    reg=L1Reg(0.02),
+    cost=logreg_cost,
+    type='L1-LogReg'
+)
+experiment_descs = list(itertools.chain(*[
+    [l2ls(M=M, N=N, batch_size=batch_size), l1ls(M=M, N=N, batch_size=batch_size),
+     l2logreg(M=M, N=N, batch_size=batch_size), l1logreg(M=M, N=N, batch_size=batch_size)]
+    for M in [1000, 5000, 10000]
+    for N in [500, 1500, 2500]
+    for batch_size in [1, 16, 32]
+]))
+
+
+if __name__ == '__main__':
+    with mp.Pool(8) as pool:
+        results = []
+        for experiment in tqdm(range(30), desc='Repetition'):
+            tuples = pool.map(run_experiment, experiment_descs)
+            for desc, (ppt_time, sgd_time, _, _) in zip(experiment_descs, tuples):
+                results.append({
+                    'experiment': experiment, 'dim': desc.M, 'num_of_samples': desc.N,
+                    'type': desc.type, 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'sgd_batch_size': desc.batch_size})
+
+    df = pd.DataFrame.from_records(results)
+    df.to_csv('cvxlinreg_experiment.csv')
+
+    df = pd.read_csv('cvxlinreg_experiment.csv')
+    sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
+    plt.figure(figsize=(16, 12))
+    sns.lmplot(data=df, x='sgd_time', y='prox_pt_time', hue='type',
+               col='dim', row='sgd_batch_size', palette="Set1", ci=None, facet_kws=dict(sharex=False, sharey=False))
+    plt.show()
