@@ -31,7 +31,7 @@ class ExperimentDesc(abc.ABC):
 M = 100
 N = 10000
 torch.manual_seed(83483)
-x_star = torch.randint(-5, 5, size=(M,), dtype=torch.float32)  # the label-generating separating hyperplane
+x_star = torch.randn(size=(M,)) # the label-generating separating hyperplane
 features = torch.randn((N, M))  # A randomly generated data matrix
 
 # create binary labels in {-1, 1}, contaminated by noise
@@ -67,9 +67,14 @@ def run_experiment(desc: ExperimentDesc):
         opt.step()
         sched.step()
 
+        step_size = desc.step_size / math.sqrt(i)
+
         with torch.no_grad():
-            step_size = desc.step_size / math.sqrt(i)
             x.set_(desc.reg.prox(step_size, x))
+
+        are_params_finite = torch.all(torch.isfinite(x)).item()
+        if not are_params_finite:  # this may be if the step size is too large, and we are diverging.
+            return float('nan'), float('nan')
 
         sample_loss = (sample_loss + reg_value).item()
         loss += sample_loss
@@ -121,43 +126,49 @@ l1logreg = partial(
 experiment_descs = [
     prob(step_size=step_size.item())
     for prob in [l2ls, l1ls, l2logreg, l1logreg]
-    for step_size in torch.logspace(-2, 1, steps=5)
+    for step_size in torch.logspace(-2, 1, steps=30)
 ]
 
 
 if __name__ == '__main__':
-    # with mp.Pool(8) as pool:
-    #     results = []
-    #     for repetition in tqdm(range(30), desc='Repetition'):
-    #         tuples = pool.map(run_experiment, experiment_descs)
-    #         for desc, (ppt_loss, sgd_loss) in zip(experiment_descs, tuples):
-    #             results.append({
-    #                 'repetition': repetition, 'step size': desc.step_size,
-    #                 'type': desc.type, 'algorithm': 'proximal point', 'loss': ppt_loss})
-    #             results.append({
-    #                 'repetition': repetition, 'step size': desc.step_size,
-    #                 'type': desc.type, 'algorithm': 'gradient', 'loss': sgd_loss})
-    #
-    # df = pd.DataFrame.from_records(results)
-    # df.to_csv('cvxlinreg_stability.csv')
-    display = pd.options.display
+    with mp.Pool(8) as pool:
+        results = []
+        for repetition in tqdm(range(30), desc='Repetition'):
+            tuples = pool.map(run_experiment, experiment_descs)
+            for desc, (ppt_loss, sgd_loss) in zip(experiment_descs, tuples):
+                results.append({
+                    'repetition': repetition, 'step size': desc.step_size,
+                    'type': desc.type, 'algorithm': 'proximal point', 'loss': ppt_loss})
+                results.append({
+                    'repetition': repetition, 'step size': desc.step_size,
+                    'type': desc.type, 'algorithm': 'gradient', 'loss': sgd_loss})
 
-    display.max_columns = 1000
-    display.max_rows = 10000
-    display.max_colwidth = 199
-    display.width = 1000
+    df = pd.DataFrame.from_records(results)
+    df.to_csv('cvxlinreg_stability.csv')
+
     df = pd.read_csv('cvxlinreg_stability.csv')
-    print(df)
-
-    sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
-    plt.figure(figsize=(16, 12))
-    g = sns.relplot(data=df, x='step size', y='loss', row='type',
+    sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.8)
+    plt.figure(figsize=(24, 20))
+    g: sns.FacetGrid = sns.relplot(data=df, x='step size', y='loss', col='type', col_wrap=2,
                     kind="line", hue='algorithm', palette="Set1",
                     facet_kws=dict(sharex=False, sharey=False))
-    g.set(xscale="log")
-    g.set(yscale="log")
-    g.set(ylim=(0.1, 1000))
 
+    def axis_config(data, **kws):
+        ax: plt.Axes = plt.gca()
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+
+        types: pd.Series = data['type']
+        problem_type = types.iloc[0]
+        if problem_type == 'Least squares - L2Reg':
+            ax.set_ylim(1, 1000)
+        elif problem_type == 'Least squares - L1Reg':
+            ax.set_ylim(10, 1000)
+        elif problem_type == 'Logistic regression - L2Reg':
+            ax.set_ylim(0.2, 10)
+        elif problem_type == 'Logistic regression - L1Reg':
+            ax.set_ylim(0.5, 5)
+
+
+    g.map_dataframe(axis_config)
     plt.show()
-
-
