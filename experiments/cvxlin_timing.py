@@ -132,10 +132,10 @@ for experiment in tqdm(range(30), desc='Experiment'):
 
 
 df = pd.DataFrame.from_records(results)
-df.to_csv('cvxlin_experiment.csv')
+df.to_csv('cvxlin_timing.csv')
 
 plt.figure(figsize=(16, 12))
-df = pd.read_csv('cvxlin_experiment.csv')
+df = pd.read_csv('cvxlin_timing.csv')
 sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
 sns.lmplot(data=df, x='sgd_time', y='prox_pt_time', hue='type',
            col='dim', row='batch_size', palette="Set1", ci=None, facet_kws=dict(sharex=False, sharey=False))

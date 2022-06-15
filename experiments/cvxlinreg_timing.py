@@ -131,9 +131,9 @@ if __name__ == '__main__':
                     'type': desc.type, 'prox_pt_time': ppt_time, 'sgd_time': sgd_time, 'sgd_batch_size': desc.batch_size})
 
     df = pd.DataFrame.from_records(results)
-    df.to_csv('cvxlinreg_experiment.csv')
+    df.to_csv('cvxlinreg_timing.csv')
 
-    df = pd.read_csv('cvxlinreg_experiment.csv')
+    df = pd.read_csv('cvxlinreg_timing.csv')
     sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
     plt.figure(figsize=(16, 12))
     sns.lmplot(data=df, x='sgd_time', y='prox_pt_time', hue='type',
