@@ -11,7 +11,11 @@ def ls_cost(x, vecs, ys):
 
 
 def logreg_linear_transform(a, y):
-    return -y * a, 0
+    if a.dim() == 2:
+        prod = (a.T * (-y)).T
+        return prod, torch.zeros_like(a[0])
+    else:
+        return -y * a, 0
 
 
 def logreg_cost(x, vecs, ys):
