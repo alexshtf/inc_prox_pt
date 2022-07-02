@@ -12,12 +12,13 @@ class Logistic:
         c = c.data.numpy()
 
         # define the dual optimization problem using CVXPY
-        s = cp.Variable(m)
+        s = cp.Variable(m, nonneg=True)
+        t = cp.Variable(m, nonneg=True)
         objective = 0.5 * cp.sum_squares(P @ s) - \
             cp.sum(cp.multiply(c, s)) - \
-            (cp.sum(cp.entr(m * s)) + cp.sum(cp.entr(1 - m * s))) / m
-
-        prob = cp.Problem(cp.Minimize(objective))
+            (cp.sum(cp.entr(m * s)) + cp.sum(cp.entr(t))) / m
+        constraints = [t == 1 - m * s]
+        prob = cp.Problem(cp.Minimize(objective), constraints)
 
         # solve the problem, and extract the optimal solution
         prob.solve()

@@ -3,7 +3,6 @@ import math
 import time
 from typing import Callable
 
-import torch
 import attr
 
 import pandas as pd
