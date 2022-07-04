@@ -4,10 +4,10 @@ import torch
 class PhaseRetrievalOracles:
     def __init__(self, a, y):
         self._a = a
-        self._y = y
+        self._y = y.item() if torch.is_tensor(y) else y
 
     def eval(self, x):
-        return torch.inner(self._a, x).square() - self._y
+        return torch.inner(self._a, x).square().item() - self._y
 
     def scalar(self):
         return -self._y
