@@ -2,6 +2,8 @@ import torch
 
 
 class PhaseRetrievalOracles:
+    one = torch.tensor(1.)
+
     def __init__(self, a, y):
         self._a = a
         self._y = y.item() if torch.is_tensor(y) else y
@@ -13,9 +15,8 @@ class PhaseRetrievalOracles:
         return -self._y
 
     def dual_eval(self, s, step_size, x):
-        g = x / step_size
-        result = -0.5 * torch.inner(g, self.solve_system(s, step_size, x))
-        return result.item() - s * self._y
+        quad_part = torch.inner(x, self.solve_system(s, step_size, x))
+        return -quad_part.item() / (2 * step_size) - s * self._y
 
     def dual_deriv(self, s, step_size, x):
         z = self.solve_system(s, step_size, x)
@@ -25,5 +26,5 @@ class PhaseRetrievalOracles:
         t = 2 * step_size * s
         a = self._a
         numerator = t * (a * x).sum()
-        denominator = 1 + t * a.square().sum()
+        denominator = PhaseRetrievalOracles.one + t * a.square().sum()
         return x - (numerator / denominator) * a

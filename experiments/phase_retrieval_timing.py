@@ -42,9 +42,10 @@ def run_experiment(desc: ExperimentDesc):
             x = torch.zeros_like(x_star, dtype=torch.float32)
             opt = ConvexLipschitzOntoQuadratic(x)
             loss = 0.
+            abs_value = AbsValue()
             for i, (a, y) in enumerate(dataset, start=1):
                 step_size = desc.step_size / math.sqrt(i)
-                loss += opt.step(step_size, AbsValue(), PhaseRetrievalOracles(a, y))
+                loss += opt.step(step_size, abs_value, PhaseRetrievalOracles(a, y))
             proxpt_time = time.perf_counter() - start_time
             proxpt_loss = loss / len(dataset)
 
@@ -73,15 +74,15 @@ def run_experiment(desc: ExperimentDesc):
 experiment_descs = [
     ExperimentDesc(M=M, N=N, batch_size=batch_size, step_size=(0.1 / M))
     for M in [1000, 3000, 6000]
-    for N in [5000, 10000, 15000, 20000, 25000, 30000]
+    for N in [500, 1000, 1000, 2000, 2500, 3000]
     for batch_size in [1, 16, 32]
 ]
 
 
 if __name__ == '__main__':
-    with mp.Pool(8) as pool:
+    with mp.Pool(16) as pool:
         results = []
-        for experiment in tqdm(range(30), desc='Repetition'):
+        for experiment in tqdm(range(10), desc='Repetition'):
             tuples = pool.map(run_experiment, experiment_descs)
             for desc, (ppt_time, sgd_time, _, _) in zip(experiment_descs, tuples):
                 results.append({
