@@ -82,7 +82,7 @@ experiment_descs = [
 if __name__ == '__main__':
     with mp.Pool(16) as pool:
         results = []
-        for experiment in tqdm(range(10), desc='Repetition'):
+        for experiment in tqdm(range(30), desc='Repetition'):
             tuples = pool.map(run_experiment, experiment_descs)
             for desc, (ppt_time, sgd_time, _, _) in zip(experiment_descs, tuples):
                 results.append({
