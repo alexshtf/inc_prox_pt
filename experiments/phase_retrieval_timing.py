@@ -28,7 +28,6 @@ def run_experiment(desc: ExperimentDesc):
     features = torch.rand((desc.N, desc.M))  # A randomly generated data matrix
     max_step_size = torch.min(0.5 / features.square().sum(dim=1)).item()
 
-    # create binary labels in {-1, 1}, contaminated by noise
     labels = torch.mv(features, x_star).square() + torch.distributions.Laplace(0, 0.02).sample((desc.N,))
     dataset = TensorDataset(features, labels)
 
