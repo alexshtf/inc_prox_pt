@@ -4,17 +4,18 @@ The project consists of several packages for implementing proximal operators for
 * `cvxlin` for compositions of a convex function onto a linear function. Useful for least squares and logistic regression.
 * `cvxlinreg` for regularized variants of the above. Useful for Lasso, or L1 / L2 regularized logistic regression.
 * `minibatch_cvxlin` for mini-batch variants of a convex onto linear composition. Useful for training least squares of logistic regression models using proximal operators applied to mini-batches of loss functions.
-* `cvxlips_quad` for a composition of a convex and Lipschitz function onto a quadratic function. Useful for problems such as phase retrieval, or factorization machines for CTR prediction.
+* `cvxlips_quad` for a composition of a convex and Lipschitz function onto a quadratic function. Useful for problems such as phase retrieval, or factorization machines for CTR prediction (experimental)
 
 
 Example - solving a phase retrieval problem using an incremental **proximal point algorithm**:
 ```python
+import math
 import torch
-from cvxlips_quad import ConvexLipschitzOntoQuadratic, PhaseRetrievalOracles, AbsValue
+from cvxlinreg import IncRegularizedConvexOnLinear, Logistic, L2Reg
 
-x = torch.zero(dim)
-opt = ConvexLipschitzOntoQuadratic(x)
-for t, (a, b) in enumerate(dataset):
-    step_size = compute_step_size(t)
-    opt.step(step_size, PhaseRetrievalOracles(a, b), AbsValue())
+w = torch.zero(dim)
+opt = IncRegularizedConvexOnLinear(w, Logistic(), L2Reg(0.01)) # L2 regularized logistic regression
+for t, (x, y) in enumerate(dataset):
+    step_size = 1 / math.sqrt(t)
+    opt.step(step_size, -y * x, 0)  # ln(1 + exp(-y * <w, x> + 0))
 ```
