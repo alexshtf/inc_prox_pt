@@ -1,21 +1,19 @@
 import abc
-import itertools
 import math
 from functools import partial
 from typing import Callable
 
 import attr
-
+import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
 import torch.multiprocessing as mp
-
-from cvxlin import IncConvexOnLinear, HalfSquared, Logistic
-from torch.utils.data import Dataset, TensorDataset, DataLoader
 from torch.optim.lr_scheduler import LambdaLR
+from torch.utils.data import Dataset, TensorDataset, DataLoader
 from tqdm.auto import tqdm
-from .common import *
+
+from common import *
+from cvxlin import IncConvexOnLinear, HalfSquared, Logistic
 
 
 @attr.s
@@ -89,11 +87,11 @@ logreg = partial(
     dataset=logistic_dataset
 )
 
-experiment_descs = list(itertools.chain(*[
+experiment_descs = [
     prob(step_size=step_size.item())
     for prob in [ls, logreg]
     for step_size in torch.logspace(-2, 1, steps=30)
-]))
+]
 
 
 if __name__ == '__main__':
