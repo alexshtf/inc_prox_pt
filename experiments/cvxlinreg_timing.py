@@ -133,9 +133,15 @@ if __name__ == '__main__':
     df = pd.DataFrame.from_records(results)
     df.to_csv('cvxlinreg_timing.csv')
 
-    df = pd.read_csv('cvxlinreg_timing.csv')
+    df = pd.read_csv('cvxlinreg_timing.csv') \
+        .rename(columns={'prox_pt_time': 'Prox-PT', 'sgd_time': 'SGD',
+                         'sgd_batch_size': 'SGD Batch Size'})
     sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
     plt.figure(figsize=(16, 12))
-    sns.lmplot(data=df, x='sgd_time', y='prox_pt_time', hue='type',
-               col='dim', row='sgd_batch_size', palette="Set1", ci=None, facet_kws=dict(sharex=False, sharey=False))
+    g = sns.FacetGrid(data=df, col='dim', row='SGD Batch Size', hue='type', palette="Set1",
+                      sharex=False, sharey=False, margin_titles=True, despine=False,
+                      height=3, aspect=1.2)
+    plt.suptitle('Proximal point vs. SGD running time (seconds)')
+    g.map_dataframe(sns.regplot, x='Prox-PT', y='SGD', ci=None)
+    g.add_legend()
     plt.show()
