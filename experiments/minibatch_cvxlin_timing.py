@@ -136,9 +136,23 @@ for experiment in tqdm(range(30), desc='Experiment'):
 df = pd.DataFrame.from_records(results)
 df.to_csv('minibatch_cvxlin_timing.csv')
 
-plt.figure(figsize=(16, 12))
-df = pd.read_csv('minibatch_cvxlin_timing.csv')
+df = pd.read_csv('minibatch_cvxlin_timing.csv') \
+    .rename(columns={'prox_pt_time': 'Prox-PT', 'sgd_time': 'SGD',
+                     'batch_size': 'Batch Size'})
+
 sns.set(context='paper', palette='Set1', style='ticks', font_scale=1.5)
-sns.lmplot(data=df, x='sgd_time', y='prox_pt_time', hue='type',
-           col='dim', row='batch_size', palette="Set1", ci=None, facet_kws=dict(sharex=False, sharey=False))
+g = sns.FacetGrid(data=df[df['type'] == 'Least squares'], col='dim', row='Batch Size', palette="Set1",
+                  sharex=False, sharey=False, margin_titles=True, despine=False,
+                  height=3, aspect=1.2)
+plt.suptitle('Least squares proximal point vs. SGD running time (seconds)')
+g.map_dataframe(sns.regplot, x='SGD', y='Prox-PT', ci=None)
+g.add_legend()
+plt.show()
+
+g = sns.FacetGrid(data=df[df['type'] == 'Logistic regression'], col='dim', row='Batch Size', palette="Set1",
+                  sharex=False, sharey=False, margin_titles=True, despine=False,
+                  height=3, aspect=1.2)
+plt.suptitle('Logistic regression proximal point vs. SGD running time (seconds)')
+g.map_dataframe(sns.regplot, x='SGD', y='Prox-PT', ci=None)
+g.add_legend()
 plt.show()
