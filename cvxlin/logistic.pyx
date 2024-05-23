@@ -1,5 +1,7 @@
+import cython
 from libc.math cimport log, exp, log1p
 from scipy.optimize.cython_optimize cimport brentq
+from .loss_base cimport LossBase
 
 
 ctypedef struct alpha_beta:
@@ -12,8 +14,8 @@ cdef double qprime(double s, void* args) noexcept:
     return -ab.alpha * s + ab.beta + log1p(-s) - log(s)
 
 
-cdef class Logistic:
-    cpdef double solve_dual(self, double alpha, double beta):
+cdef class Logistic(LossBase):
+    cdef double solve_dual(self, double alpha, double beta):
         # compute [l,u] containing a point with zero qprime
         cdef alpha_beta ab
         ab.alpha = alpha
@@ -34,5 +36,5 @@ cdef class Logistic:
 
         return brentq(qprime, l, u, &ab, XTOL, RTOL, MAX_ITER, NULL)
 
-    cpdef double eval(self, double z):
+    cdef double eval(self, double z):
         return log1p(exp(z))

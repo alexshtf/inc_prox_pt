@@ -1,9 +1,10 @@
-cimport cython
+import cython
+from .loss_base cimport LossBase
 
 @cython.cdivision(True)
-cdef class Hinge:
-    cpdef cython.floating solve_dual(self, cython.floating alpha, cython.floating beta):
-        cdef cython.floating result = beta / alpha
+cdef class Hinge(LossBase):
+    cdef double solve_dual(self, double alpha, double beta):
+        cdef double result = beta / alpha
         if result > 1:
             return 1
         elif result < 0:
@@ -11,6 +12,6 @@ cdef class Hinge:
         else:
             return result
 
-    cpdef cython.floating eval(self, cython.floating z):
-        cdef cython.floating result = max(0, z)
+    cdef double eval(self, double z):
+        cdef double result = max(0, z)
         return result
