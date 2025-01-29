@@ -15,7 +15,8 @@ preferred-citation:
   journal: "Mathematical Programming Computation"
   volume: 16
   issue: 3
-  pages: 423--458
+  start: 423
+  pages: 36
   issn: "1867-2957"
   year: 2024
   month: 9
