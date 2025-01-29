@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: If you use this software, please cite both the article from preferred-citation and the software itself.
+authors:
+  - family-names: Shtoff
+    given-names: Alex
+title: Efficient algorithms for implementing incremental proximal-point methods
+version: 1.0.0
+url: https://doi.org/10.1007/s12532-024-00258-8
+doi: 10.1007/s12532-024-00258-8
+date-released: '2024-09-01'
+repository-code: 'https://github.com/alexshtf/inc_prox_pt'
+preferred-citation:
+  authors:
+    - family-names: Shtoff
+      given-names: Alex
+  title: Efficient algorithms for implementing incremental proximal-point methods
+  doi: 10.1007/s12532-024-00258-8
+  url: https://doi.org/10.1007/s12532-024-00258-8
+  type: article-journal
+  journal: "Mathematical Programming Computation"
+  volume: 16
+  number: 3
+  pages: 423--458
+  issn: "1867-2957"
+  year: 2024
+  month: 9
+  publisher:
+    name: Springer Nature
